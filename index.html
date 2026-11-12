@@ -3,186 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#050811" />
+  <meta name="theme-color" content="#04070f" />
   <title>EL CLÁSICO 2.0 · Barça vs Madrid</title>
   <style>
     :root {
-      --bg: #050811;
-      --surface: #0c1220;
-      --surface-2: #131c31;
-      --border: rgba(255, 255, 255, 0.09);
+      --bg: #04070f;
+      --surface: #0b111e;
+      --surface-2: #121b2e;
+      --surface-3: #18233c;
+      --border: rgba(255, 255, 255, 0.08);
       --text: #f8fafc;
       --muted: #94a3b8;
-      --fcb-grad: linear-gradient(135deg, #9b003e 0%, #004d98 100%);
-      --rma-grad: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      --fcb: linear-gradient(135deg, #9b003e 0%, #004d98 100%);
+      --rma: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
       --gold: #f59e0b;
       --green: #10b981;
       --red: #ef4444;
+      --blue: #3b82f6;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body {
-      background: radial-gradient(circle at top, #111b33 0%, var(--bg) 55%);
-      color: var(--text); padding-bottom: 86px; min-height: 100vh;
+      background: radial-gradient(circle at 50% 0%, #13203d 0%, var(--bg) 55%);
+      color: var(--text); padding-bottom: 88px; min-height: 100vh;
     }
 
     /* Header */
     header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(5, 8, 17, 0.85); backdrop-filter: blur(14px);
+      position: sticky; top: 0; z-index: 60;
+      background: rgba(4, 7, 15, 0.88); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 15px; display: flex; justify-content: space-between; align-items: center;
     }
     .brand { font-weight: 900; font-size: 1.05rem; letter-spacing: -0.4px; display: flex; align-items: center; gap: 8px; }
-    .phase-badge {
+    .phase-pill {
       display: flex; align-items: center; gap: 6px;
-      background: rgba(245, 158, 11, 0.15); color: var(--gold);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px;
-      text-transform: uppercase;
+      background: rgba(245, 158, 11, 0.14); color: var(--gold);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      font-size: 0.68rem; font-weight: 900; padding: 4px 10px; border-radius: 999px;
+      text-transform: uppercase; letter-spacing: 0.4px;
     }
     .dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); }
+    .btn-god {
+      background: linear-gradient(135deg, #f59e0b, #dc2626); color: #fff;
+      border: none; border-radius: 9px; padding: 6px 10px; font-size: 0.72rem;
+      font-weight: 900; cursor: pointer; box-shadow: 0 0 14px rgba(239, 68, 68, 0.45);
+    }
 
-    .container { max-width: 620px; margin: 0 auto; padding: 14px; }
+    .container { max-width: 640px; margin: 0 auto; padding: 14px; }
 
     /* Cards */
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 20px; padding: 16px; margin-bottom: 14px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
     }
-    .card-hero-fcb { background: var(--fcb-grad); border: 1px solid rgba(255,255,255,0.2); }
-    .card-hero-rma { background: linear-gradient(135deg, #1e293b 0%, #27272a 100%); border: 1px solid rgba(254, 190, 16, 0.45); }
+    .hero-fcb { background: var(--fcb); border: 1px solid rgba(255, 255, 255, 0.22); }
+    .hero-rma { background: linear-gradient(135deg, #1e293b 0%, #111827 100%); border: 1px solid rgba(254, 190, 16, 0.5); }
 
-    h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.2px; }
-    p { color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+    h2 { font-size: 1.08rem; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.2px; }
+    h3 { font-size: 0.96rem; font-weight: 800; }
+    p { color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
 
     /* Buttons */
     .btn {
-      width: 100%; border: none; border-radius: 13px; padding: 13px 16px;
-      font-weight: 800; font-size: 0.92rem; cursor: pointer; transition: 0.15s;
+      width: 100%; border: none; border-radius: 12px; padding: 12px 15px;
+      font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: 0.15s;
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     }
     .btn:active { transform: scale(0.97); }
-    .btn-google { background: #fff; color: #0f172a; box-shadow: 0 4px 15px rgba(255,255,255,0.15); }
-    .btn-fcb { background: var(--fcb-grad); color: #fff; }
+    .btn-google { background: #fff; color: #0f172a; box-shadow: 0 4px 18px rgba(255,255,255,0.18); }
+    .btn-fcb { background: var(--fcb); color: #fff; }
     .btn-rma { background: #fff; color: #0f172a; border: 2px solid #febe10; }
     .btn-green { background: var(--green); color: #022c22; }
-    .btn-red { background: rgba(239, 68, 68, 0.16); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
-    .btn-outline { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+    .btn-red { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.45); }
+    .btn-blue { background: var(--blue); color: #fff; }
     .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; }
-    .btn-sm { padding: 8px 12px; font-size: 0.8rem; width: auto; border-radius: 10px; }
+    .btn-outline { background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+    .btn-sm { padding: 7px 11px; font-size: 0.78rem; width: auto; border-radius: 9px; }
 
-    /* Onboarding */
-    .vs-banner {
-      display: flex; justify-content: space-around; align-items: center;
-      background: var(--surface-2); border-radius: 16px; padding: 16px; margin: 14px 0;
-      border: 1px solid var(--border);
-    }
-    .club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    .club-pick {
-      background: var(--surface-2); border: 2px solid var(--border);
-      border-radius: 18px; padding: 18px 10px; text-align: center;
-    }
-    .club-pick.fcb { border-color: rgba(165, 0, 68, 0.6); }
-    .club-pick.rma { border-color: rgba(254, 190, 16, 0.6); }
-
+    /* Inputs */
     input, select, textarea {
-      width: 100%; background: #070b14; border: 1px solid var(--border);
-      color: var(--text); padding: 12px; border-radius: 12px;
-      font-size: 0.9rem; margin-bottom: 10px; outline: none;
+      width: 100%; background: #060a14; border: 1px solid var(--border);
+      color: var(--text); padding: 11px 12px; border-radius: 11px;
+      font-size: 0.88rem; margin-bottom: 9px; outline: none;
     }
     input:focus, select:focus, textarea:focus { border-color: var(--gold); }
 
-    /* Stats */
+    /* Stats & Stadium Grid */
     .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
     .stat-tile {
-      background: rgba(5, 8, 17, 0.55); backdrop-filter: blur(6px);
+      background: rgba(4, 7, 15, 0.6); backdrop-filter: blur(8px);
       padding: 11px 12px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);
     }
-    .stat-lbl { font-size: 0.72rem; color: rgba(255,255,255,0.75); font-weight: 600; }
-    .stat-num { font-size: 1.12rem; font-weight: 900; margin-top: 3px; }
-    .progress { height: 6px; background: rgba(0,0,0,0.4); border-radius: 99px; overflow: hidden; margin-top: 6px; }
-    .progress-bar { height: 100%; border-radius: 99px; transition: width 0.4s; }
+    .stat-lbl { font-size: 0.71rem; color: rgba(255,255,255,0.72); font-weight: 700; text-transform: uppercase; }
+    .stat-num { font-size: 1.1rem; font-weight: 900; margin-top: 3px; }
+    .progress { height: 6px; background: rgba(0,0,0,0.45); border-radius: 99px; overflow: hidden; margin-top: 6px; }
+    .progress-bar { height: 100%; border-radius: 99px; transition: width 0.35s; }
 
-    /* Propuestas / Votaciones */
+    /* Bankruptcy Alert */
+    .bankruptcy-alert {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.25), rgba(127, 29, 29, 0.45));
+      border: 1px solid #ef4444; border-radius: 16px; padding: 13px; margin-bottom: 14px;
+      animation: borderPulse 1.5s infinite;
+    }
+    @keyframes borderPulse { 0%,100% { border-color: #ef4444; } 50% { border-color: #fca5a5; } }
+
+    /* Propuestas & Votos */
     .prop-card {
       background: var(--surface-2); border: 1px solid var(--border);
       border-radius: 16px; padding: 14px; margin-bottom: 12px;
     }
-    .prop-badge {
-      font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px;
-      text-transform: uppercase; letter-spacing: 0.3px;
+    .tag {
+      font-size: 0.66rem; font-weight: 900; padding: 3px 8px; border-radius: 6px;
+      text-transform: uppercase; display: inline-block;
     }
     .tag-buy { background: rgba(16, 185, 129, 0.18); color: #34d399; }
     .tag-sell { background: rgba(239, 68, 68, 0.18); color: #f87171; }
+    .tag-stadium { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
     .tag-money { background: rgba(245, 158, 11, 0.18); color: #fbbf24; }
-    .tag-tactic { background: rgba(59, 130, 246, 0.18); color: #60a5fa; }
+    .tag-done { background: rgba(168, 85, 247, 0.22); color: #d8b4fe; }
 
-    .vote-bar-wrap {
-      height: 10px; background: #070b14; border-radius: 99px; overflow: hidden;
-      display: flex; margin: 10px 0 8px; border: 1px solid var(--border);
+    .impact-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .chip {
+      background: #070b15; border: 1px solid var(--border);
+      padding: 3px 8px; border-radius: 7px; font-size: 0.73rem; font-weight: 800;
     }
-    .vote-yes { background: var(--green); height: 100%; transition: width 0.3s; }
-    .vote-no { background: var(--red); height: 100%; transition: width 0.3s; }
-    .vote-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+    .vote-bar { height: 9px; background: #060a14; border-radius: 99px; overflow: hidden; display: flex; margin: 8px 0; }
+    .v-yes { background: var(--green); height: 100%; }
+    .v-no { background: var(--red); height: 100%; }
 
-    /* Match Scoreboard */
-    .scoreboard {
-      background: linear-gradient(180deg, #131c31 0%, #090e1a 100%);
-      border: 1px solid var(--border); border-radius: 18px; padding: 16px; text-align: center;
+    /* Market Cards */
+    .market-item {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 14px; padding: 12px; margin-bottom: 9px;
     }
-    .score-row { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
-    .score-team { width: 36%; font-weight: 800; font-size: 0.92rem; }
-    .score-digits {
-      font-size: 1.9rem; font-weight: 900; background: #050811;
-      padding: 6px 16px; border-radius: 12px; border: 1px solid var(--border);
-      letter-spacing: 2px;
+    .ovr-badge {
+      width: 40px; height: 40px; border-radius: 11px; font-weight: 900; font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, #f59e0b, #b45309); color: #fff;
     }
 
     /* Chat Bunker */
     .chat-box {
-      height: 56vh; overflow-y: auto; background: var(--surface);
+      height: 55vh; overflow-y: auto; background: var(--surface);
       border: 1px solid var(--border); border-radius: 18px; padding: 12px;
       display: flex; flex-direction: column; gap: 10px;
     }
-    .msg { background: var(--surface-2); padding: 10px 13px; border-radius: 14px; max-width: 85%; border: 1px solid var(--border); }
-    .msg.mine { align-self: flex-end; background: #1c2842; border-color: rgba(255,255,255,0.16); }
-    .msg-head { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; margin-bottom: 4px; }
-    .msg-role { font-size: 0.63rem; padding: 2px 6px; border-radius: 5px; font-weight: 800; background: rgba(245,158,11,0.18); color: var(--gold); }
-    .msg-text { font-size: 0.9rem; line-height: 1.38; word-break: break-word; }
+    .msg { background: var(--surface-2); padding: 10px 13px; border-radius: 14px; max-width: 86%; border: 1px solid var(--border); }
+    .msg.mine { align-self: flex-end; background: #1a2742; border-color: rgba(255,255,255,0.16); }
+    .msg.admin-msg { border-color: var(--gold); background: rgba(245, 158, 11, 0.12); }
+    .msg-head { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; margin-bottom: 3px; }
+    .msg-role { font-size: 0.62rem; padding: 2px 6px; border-radius: 5px; font-weight: 800; background: rgba(245,158,11,0.18); color: var(--gold); }
+    .msg-text { font-size: 0.89rem; line-height: 1.38; word-break: break-word; }
     .chat-input-row { display: flex; gap: 8px; margin-top: 10px; }
     .chat-input-row input { margin-bottom: 0; }
 
-    /* Subtabs */
+    /* Subtabs & Nav */
     .sub-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
     .sub-tab {
-      padding: 10px; text-align: center; border-radius: 12px; font-weight: 800;
-      font-size: 0.82rem; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; color: var(--muted);
+      padding: 10px; text-align: center; border-radius: 11px; font-weight: 800;
+      font-size: 0.8rem; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; color: var(--muted);
     }
     .sub-tab.active { border-color: var(--gold); color: var(--gold); background: rgba(245, 158, 11, 0.12); }
 
-    /* Bottom Nav */
+    .admin-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 12px; }
+    .adm-tab {
+      padding: 8px 4px; text-align: center; border-radius: 9px; font-size: 0.72rem; font-weight: 800;
+      background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); cursor: pointer;
+    }
+    .adm-tab.active { background: var(--gold); color: #000; border-color: var(--gold); }
+
     nav.bottom-nav {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
-      background: rgba(5, 8, 17, 0.95); backdrop-filter: blur(12px);
+      background: rgba(4, 7, 15, 0.96); backdrop-filter: blur(14px);
       border-top: 1px solid var(--border);
       display: grid; grid-template-columns: repeat(5, 1fr); padding: 8px 0 12px;
     }
     .nav-btn {
       background: none; border: none; color: var(--muted);
       display: flex; flex-direction: column; align-items: center; gap: 3px;
-      font-size: 0.68rem; font-weight: 700; cursor: pointer;
+      font-size: 0.67rem; font-weight: 700; cursor: pointer;
     }
-    .nav-btn span.ico { font-size: 1.25rem; }
+    .nav-btn span.ico { font-size: 1.22rem; }
     .nav-btn.active { color: var(--gold); }
 
     .hidden { display: none !important; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
     th, td { padding: 9px 6px; text-align: left; border-bottom: 1px solid var(--border); }
-    th { color: var(--muted); font-size: 0.72rem; text-transform: uppercase; }
-    .role-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
-    .role-row:last-child { border-bottom: none; }
-    .role-pill { font-size: 0.73rem; font-weight: 800; padding: 4px 9px; border-radius: 8px; background: rgba(245, 158, 11, 0.15); color: var(--gold); }
+    th { color: var(--muted); font-size: 0.7rem; text-transform: uppercase; }
+    .scoreboard {
+      background: linear-gradient(180deg, #131d33 0%, #090e1a 100%);
+      border: 1px solid var(--border); border-radius: 18px; padding: 16px; text-align: center;
+    }
+    .score-row { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
+    .score-digits {
+      font-size: 1.85rem; font-weight: 900; background: #04070f;
+      padding: 6px 16px; border-radius: 12px; border: 1px solid var(--border); letter-spacing: 2px;
+    }
   </style>
 </head>
 <body>
@@ -190,47 +208,55 @@
 <header>
   <div class="brand">⚽ EL CLÁSICO 2.0</div>
   <div style="display:flex;align-items:center;gap:8px;">
-    <div class="phase-badge" id="globalPhaseBadge"><span class="dot"></span> PRETEMPORADA</div>
-    <button id="adminToggleBtn" class="btn btn-sm btn-outline hidden" onclick="openAdminModal()">⚙️</button>
+    <div class="phase-pill" id="globalPhaseBadge"><span class="dot"></span> PRETEMPORADA</div>
+    <button id="godModeBtn" class="btn-god hidden" onclick="openGodPanel()">👑 ADMIN</button>
   </div>
 </header>
 
-<!-- PANTALLA 1: LOGIN -->
+<!-- PANTALLA BANEADO -->
+<div id="bannedView" class="container hidden">
+  <div class="card" style="text-align:center;padding:30px 18px;border-color:#ef4444;">
+    <div style="font-size:3rem;margin-bottom:10px;">🔨🚫</div>
+    <h2 style="color:#ef4444;">HAS SIDO EXPULSADO DEL EXPERIMENTO</h2>
+    <p style="margin-top:8px;">La administración ha bloqueado tu cuenta por incumplir las normas del club.</p>
+  </div>
+</div>
+
+<!-- PANTALLA LOGIN -->
 <div id="authView" class="container">
   <div class="card" style="text-align:center;padding:26px 18px;">
-    <div class="vs-banner">
+    <div style="display:flex;justify-content:space-around;align-items:center;background:var(--surface-2);padding:16px;border-radius:16px;margin-bottom:14px;">
       <div><div style="font-size:2.6rem;">🔵🔴</div><strong>FC Barcelona</strong></div>
       <div style="font-weight:900;color:var(--gold);font-size:1.2rem;">VS</div>
       <div><div style="font-size:2.6rem;">⚪👑</div><strong>Real Madrid</strong></div>
     </div>
-    <h2 style="font-size:1.35rem;">Dos clubes. Mismo inicio. Vosotros mandáis.</h2>
-    <p style="margin-top:8px;">Gestionad el presupuesto, votad fichajes y ventas, elegid a vuestro Presidente y Entrenador, y competid <strong>1 partido por día</strong>.</p>
-    <p style="margin-top:8px;color:#cbd5e1;font-size:0.82rem;">🔒 <strong>Búnker cerrado:</strong> Los dos equipos NO pueden hablar entre ellos ni ver las decisiones del rival.</p>
+    <h2 style="font-size:1.35rem;">Dos clubes. Mismo inicio. Vosotros decidís.</h2>
+    <p style="margin-top:8px;">Votad fichajes, ampliad el estadio, evitad la bancarrota y competid <strong>1 partido por día</strong>. Los dos bandos están incomunicados.</p>
     <button class="btn btn-google" style="margin-top:16px;" onclick="loginWithGoogle()">
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18" alt="G" />
-      Entrar con Google para elegir bando
+      Entrar con Google
     </button>
   </div>
 </div>
 
-<!-- PANTALLA 2: ELECCIÓN PERMANENTE -->
+<!-- PANTALLA ELEGIR BANDO -->
 <div id="chooseClubView" class="container hidden">
   <div class="card">
     <h2>Elige tu escudo para siempre</h2>
-    <p>⚠️ Una vez entres en un bando, no podrás cambiarte ni espiar al rival.</p>
-    <input type="text" id="nicknameInput" placeholder="Tu apodo de socio (ej. Cule10, Vikingo99...)" maxlength="18" style="margin-top:12px;" />
-    <div class="club-grid">
-      <div class="club-pick fcb">
-        <div style="font-size:2.8rem;margin-bottom:6px;">🔵🔴</div>
+    <p>⚠️ No podrás cambiarte ni ver el chat del equipo rival.</p>
+    <input type="text" id="nicknameInput" placeholder="Tu apodo de socio (ej. Cule10, Vikingo99)" maxlength="18" style="margin-top:12px;" />
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;">
+      <div style="background:var(--surface-2);border:2px solid rgba(165,0,68,0.6);border-radius:16px;padding:16px 10px;text-align:center;">
+        <div style="font-size:2.6rem;">🔵🔴</div>
         <h3>FC Barcelona</h3>
-        <p style="font-size:0.78rem;margin:6px 0 12px;">100M € · Media 82<br>ADN Masía y toque</p>
-        <button class="btn btn-fcb btn-sm" onclick="selectClub('FCB')">Unirme al Barça</button>
+        <p style="font-size:0.75rem;margin:6px 0 12px;">100M € · GRL 82<br>Estadio 60.000</p>
+        <button class="btn btn-fcb btn-sm" onclick="selectClub('FCB')">Ser del Barça</button>
       </div>
-      <div class="club-pick rma">
-        <div style="font-size:2.8rem;margin-bottom:6px;">⚪👑</div>
+      <div style="background:var(--surface-2);border:2px solid rgba(254,190,16,0.6);border-radius:16px;padding:16px 10px;text-align:center;">
+        <div style="font-size:2.6rem;">⚪👑</div>
         <h3>Real Madrid</h3>
-        <p style="font-size:0.78rem;margin:6px 0 12px;">100M € · Media 82<br>ADN Galáctico y épica</p>
-        <button class="btn btn-rma btn-sm" onclick="selectClub('RMA')">Unirme al Madrid</button>
+        <p style="font-size:0.75rem;margin:6px 0 12px;">100M € · GRL 82<br>Estadio 60.000</p>
+        <button class="btn btn-rma btn-sm" onclick="selectClub('RMA')">Ser del Madrid</button>
       </div>
     </div>
   </div>
@@ -239,12 +265,31 @@
 <!-- APP PRINCIPAL -->
 <div id="mainApp" class="hidden">
 
-  <!-- TAB 1: MI CLUB Y ECONOMÍA -->
+  <!-- BARRA DE INFILTRACIÓN SOLO PARA TI (ADMIN) -->
+  <div id="infiltrateBar" class="container hidden" style="padding-bottom:0;">
+    <div style="background:rgba(245,158,11,0.14);border:1px solid var(--gold);border-radius:12px;padding:8px 12px;display:flex;justify-content:space-between;align-items:center;font-size:0.76rem;">
+      <span>👁️ Viendo bando: <strong id="viewingClubLabel">FCB</strong></span>
+      <div style="display:flex;gap:6px;">
+        <button class="btn btn-sm btn-fcb" onclick="switchViewClub('FCB')">Ver Barça</button>
+        <button class="btn btn-sm btn-rma" onclick="switchViewClub('RMA')">Ver Madrid</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 1: MI CLUB Y ESTADIO -->
   <section id="tab-club" class="container">
+    <!-- ALERTA BANCARROTA -->
+    <div id="bankruptcyBox" class="bankruptcy-alert hidden">
+      <strong style="color:#fca5a5;font-size:0.92rem;">🚨 ¡ALERTA DE BANCARROTA!</strong>
+      <p style="color:#fecaca;font-size:0.8rem;margin-top:3px;" id="bankruptcyText">
+        El club está en números rojos. Si pasáis más de 10 días en deuda sin vender jugadores o sanear cuentas, ¡el equipo perderá el experimento!
+      </p>
+    </div>
+
     <div class="card" id="heroClubCard">
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <div>
-          <span id="clubTag" style="font-size:0.72rem;font-weight:900;letter-spacing:0.6px;opacity:0.9;"></span>
+          <span id="clubTag" style="font-size:0.7rem;font-weight:900;letter-spacing:0.6px;opacity:0.9;"></span>
           <h2 id="clubNameTitle" style="font-size:1.5rem;margin-top:2px;color:#fff;"></h2>
         </div>
         <div id="clubBigCrest" style="font-size:2.8rem;"></div>
@@ -253,33 +298,33 @@
 
       <div class="stats-grid">
         <div class="stat-tile">
-          <div class="stat-lbl">💰 Caja del Club</div>
+          <div class="stat-lbl">💰 Caja / Deuda</div>
           <div class="stat-num" id="statBudget" style="color:#4ade80;">100.0M €</div>
           <div class="progress"><div class="progress-bar" id="barBudget" style="width:70%;background:#4ade80;"></div></div>
         </div>
         <div class="stat-tile">
-          <div class="stat-lbl">⚡ Media Equipo</div>
+          <div class="stat-lbl">⚡ GRL Equipo</div>
           <div class="stat-num" id="statOvr">82 / 100</div>
           <div class="progress"><div class="progress-bar" id="barOvr" style="width:82%;background:#60a5fa;"></div></div>
         </div>
         <div class="stat-tile">
-          <div class="stat-lbl">🏟️ Moral Afición</div>
-          <div class="stat-num" id="statMoral" style="color:#fbbf24;">85%</div>
-          <div class="progress"><div class="progress-bar" id="barMoral" style="width:85%;background:#fbbf24;"></div></div>
+          <div class="stat-lbl">🏟️ Aforo Estadio</div>
+          <div class="stat-num" id="statSeats">60.000</div>
+          <div class="progress"><div class="progress-bar" id="barSeats" style="width:60%;background:#fbbf24;"></div></div>
         </div>
         <div class="stat-tile">
-          <div class="stat-lbl">👥 Socios en Bando</div>
-          <div class="stat-num" id="statMembers">1</div>
-          <div class="progress"><div class="progress-bar" style="width:85%;background:#c084fc;"></div></div>
+          <div class="stat-lbl">💵 Ingreso / Partido</div>
+          <div class="stat-num" id="statIncome" style="color:#34d399;">+3.0M €</div>
+          <div class="progress"><div class="progress-bar" style="width:65%;background:#34d399;"></div></div>
         </div>
       </div>
     </div>
 
-    <!-- RECLUTAMIENTO VIRAL -->
-    <div class="card" style="border-color:rgba(245,158,11,0.4);">
-      <h2>📣 ¡Consigue refuerzos para tu bando!</h2>
-      <p style="margin-bottom:10px;">Cuantos más socios se unan a tu club, más dinero por abonos generáis y más fuerza tenéis en la liga. ¡Comparte el enlace con amigos de tu equipo!</p>
-      <button class="btn btn-gold" onclick="shareInvite()">📲 Invitar gente a mi bando</button>
+    <!-- INVITAR SOCIOS -->
+    <div class="card" style="border-color:rgba(245,158,11,0.35);">
+      <h2>📣 Recluta socios para tu bando (<span id="statMembers">1</span> activos)</h2>
+      <p style="margin-bottom:10px;">Más socios = más votos, más presión y más ingresos por abonos. ¡Comparte el enlace con gente de tu equipo!</p>
+      <button class="btn btn-gold" onclick="shareInvite()">📲 Invitar gente a mi club</button>
     </div>
 
     <!-- DIRECTIVA -->
@@ -289,55 +334,35 @@
     </div>
   </section>
 
-  <!-- TAB 2: PROPUESTAS, FICHAJES Y ELECCIONES -->
+  <!-- TAB 2: VOTACIONES Y CARGOS -->
   <section id="tab-vote" class="container hidden">
     <div class="sub-tabs">
-      <div class="sub-tab active" id="subTabProps" onclick="switchVoteSub('props')">💸 Fichajes y Decisiones</div>
-      <div class="sub-tab" id="subTabRoles" onclick="switchVoteSub('roles')">👔 Elección de Cargos</div>
+      <div class="sub-tab active" id="subTabProps" onclick="switchVoteSub('props')">🗳️ Propuestas Oficiales</div>
+      <div class="sub-tab" id="subTabRoles" onclick="switchVoteSub('roles')">👔 Elección Cargos</div>
     </div>
 
-    <!-- SUBTAB A: PROPUESTAS DE DINERO, FICHAJES Y VENTAS -->
     <div id="votePropsPanel">
       <div class="card">
-        <h2>📝 Crear Propuesta para el Club</h2>
-        <p style="margin-bottom:10px;">Propón un fichaje, una venta o una medida económica para que todos los socios la voten:</p>
-        <select id="propType">
-          <option value="BUY">🟢 Fichar Jugador (Gasta dinero / Sube media)</option>
-          <option value="SELL">🔴 Vender Jugador (Gana dinero / Baja media)</option>
-          <option value="MONEY">💰 Gestión Económica (Entradas, estadio, patrocinio)</option>
-          <option value="TACTIC">📋 Decisión Deportiva (Alineación, prima, estilo)</option>
-        </select>
-        <input type="text" id="propTitle" placeholder="Título (ej. Fichar a Nico Williams por 58M €)" maxlength="70" />
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-          <input type="number" id="propMoney" placeholder="Impacto € (ej. -58 o +30)" />
-          <input type="number" id="propOvr" placeholder="Impacto Media (ej. +2 o -1)" />
-        </div>
-        <textarea id="propDesc" rows="2" placeholder="Explica por qué el club debería aprobar esto..." maxlength="180"></textarea>
-        <button class="btn btn-green" onclick="createProposal()">🗳️ Lanzar Propuesta a Votación</button>
-      </div>
-
-      <div class="card">
-        <h2>📊 Propuestas Activas (Solo tu bando)</h2>
+        <h2>📋 Decisiones del Club (Solo vuestro bando)</h2>
+        <p style="margin-bottom:12px;">Votad las operaciones económicas, ampliaciones de estadio y fichajes propuestas para el equipo. Si la mayoría vota <strong>SÍ</strong>, se ejecutará aunque os endeudéis.</p>
         <div id="proposalsList">Cargando propuestas...</div>
       </div>
     </div>
 
-    <!-- SUBTAB B: CANDIDATURAS A CARGOS -->
     <div id="voteRolesPanel" class="hidden">
       <div class="card">
         <h2>📢 Preséntate a un Cargo</h2>
         <select id="roleSelect">
-          <option value="Presidente/a">👔 Presidente/a (Gestiona el presupuesto)</option>
-          <option value="Entrenador/a">📋 Entrenador/a (Elige táctica y 11 titular)</option>
-          <option value="Director/a Deportivo/a">💼 Director/a Deportivo/a (Negocia fichajes)</option>
-          <option value="Director/a de Cantera">🌱 Director/a de Cantera (Sube promesas)</option>
-          <option value="Capitán/a">📣 Capitán/a (Lidera el vestuario)</option>
+          <option value="Presidente/a">👔 Presidente/a</option>
+          <option value="Entrenador/a">📋 Entrenador/a</option>
+          <option value="Director/a Deportivo/a">💼 Director/a Deportivo/a</option>
+          <option value="Director/a de Cantera">🌱 Director/a de Cantera</option>
+          <option value="Capitán/a">📣 Capitán/a</option>
         </select>
         <input type="text" id="sloganInput" placeholder="Tu eslogan electoral..." maxlength="65" />
         <textarea id="programInput" rows="2" placeholder="Tus promesas si ganas..." maxlength="180"></textarea>
         <button class="btn btn-green" onclick="createCandidate()">🚀 Publicar Candidatura</button>
       </div>
-
       <div class="card">
         <h2>🗳️ Candidatos del Club</h2>
         <div id="candidatesContainer">Cargando...</div>
@@ -345,49 +370,56 @@
     </div>
   </section>
 
-  <!-- TAB 3: VESTUARIO PRIVADO (BÚNKER) -->
+  <!-- TAB 3: VESTUARIO PRIVADO -->
   <section id="tab-chat" class="container hidden">
-    <div class="card" style="padding:12px 14px;margin-bottom:10px;border-color:rgba(16,185,129,0.35);">
-      <div style="display:flex;align-items:center;gap:8px;font-size:0.84rem;font-weight:800;color:#34d399;">
-        🔒 VESTUARIO PRIVADO · INCOMUNICACIÓN TOTAL
-      </div>
-      <p style="font-size:0.78rem;margin-top:2px;">Solo entran socios de tu club. El equipo rival NO puede leer ni escribir aquí.</p>
+    <div class="card" style="padding:11px 14px;margin-bottom:10px;border-color:rgba(16,185,129,0.35);">
+      <div style="font-size:0.82rem;font-weight:800;color:#34d399;">🔒 VESTUARIO PRIVADO DEL CLUB</div>
+      <p style="font-size:0.76rem;margin-top:2px;">Búnker cerrado. El equipo rival NO puede leer ni escribir aquí.</p>
     </div>
-
     <div class="chat-box" id="chatBox"></div>
-
     <div class="chat-input-row">
-      <input type="text" id="msgInput" placeholder="Habla con tu equipo en secreto..." maxlength="220" onkeydown="if(event.key==='Enter') sendChat()" />
+      <input type="text" id="msgInput" placeholder="Escribe en el vestuario..." maxlength="220" onkeydown="if(event.key==='Enter') sendChat()" />
       <button class="btn btn-green btn-sm" onclick="sendChat()">Enviar</button>
     </div>
   </section>
 
-  <!-- TAB 4: PLANTILLA -->
+  <!-- TAB 4: PLANTILLA Y MERCADO -->
   <section id="tab-squad" class="container hidden">
-    <div class="card">
+    <div class="sub-tabs">
+      <div class="sub-tab active" id="subTabMySquad" onclick="switchSquadSub('mine')">👕 Nuestra Plantilla</div>
+      <div class="sub-tab" id="subTabMarket" onclick="switchSquadSub('market')">🛒 Mercado de Fichajes</div>
+    </div>
+
+    <div id="mySquadPanel" class="card">
       <h2 id="squadTitle">📋 Plantilla Oficial</h2>
-      <p style="margin-bottom:10px;">Cuando aprobéis fichajes o ventas en las votaciones, la plantilla y la media cambiarán.</p>
+      <p style="margin-bottom:10px;">Jugadores actuales del club y su GRL.</p>
       <table>
-        <thead><tr><th>Pos</th><th>Jugador</th><th>Edad</th><th>Media</th><th>Valor</th></tr></thead>
+        <thead><tr><th>Pos</th><th>Jugador</th><th>Edad</th><th>GRL</th><th>Valor</th></tr></thead>
         <tbody id="squadBody"></tbody>
       </table>
+    </div>
+
+    <div id="marketPanel" class="card hidden">
+      <h2>🛒 Mercado Internacional Disponible</h2>
+      <p style="margin-bottom:10px;">Jugadores disponibles en el mercado. Debatid en el Vestuario a quién queréis fichar para que salga en votación.</p>
+      <div id="marketList">Cargando mercado...</div>
     </div>
   </section>
 
   <!-- TAB 5: PARTIDOS Y LIGA -->
   <section id="tab-league" class="container hidden">
     <div class="scoreboard" style="margin-bottom:14px;">
-      <span class="phase-badge" id="matchLabel">PRÓXIMO PARTIDO · JORNADA 1</span>
+      <span class="phase-pill" id="matchLabel">PRETEMPORADA</span>
       <div class="score-row">
-        <div class="score-team">🔵🔴<br>FC Barcelona</div>
+        <div style="width:36%;font-weight:800;">🔵🔴<br>FC Barcelona</div>
         <div class="score-digits" id="scoreDisplay">- : -</div>
-        <div class="score-team">⚪👑<br>Real Madrid</div>
+        <div style="width:36%;font-weight:800;">⚪👑<br>Real Madrid</div>
       </div>
-      <p id="matchSummaryText" style="font-size:0.83rem;">1 partido cada día. Aún estamos en Pretemporada cerrando directivas y primeros fichajes.</p>
+      <p id="matchSummaryText" style="font-size:0.82rem;">1 partido cada día. Aún estamos en Pretemporada cerrando directivas.</p>
     </div>
 
     <div class="card">
-      <h2>⚔️ Guerra de Gestión (En Vivo)</h2>
+      <h2>⚔️ Comparativa de Clubes</h2>
       <div class="stats-grid">
         <div class="stat-tile">
           <div class="stat-lbl">🔵🔴 Socios Barça</div>
@@ -397,16 +429,24 @@
           <div class="stat-lbl">⚪👑 Socios Madrid</div>
           <div class="stat-num" id="compRmaMembers">0</div>
         </div>
+        <div class="stat-tile">
+          <div class="stat-lbl">🔵🔴 Aforo Camp Nou</div>
+          <div class="stat-num" id="compFcbSeats">60.000</div>
+        </div>
+        <div class="stat-tile">
+          <div class="stat-lbl">⚪👑 Aforo Bernabéu</div>
+          <div class="stat-num" id="compRmaSeats">60.000</div>
+        </div>
       </div>
     </div>
 
     <div class="card">
-      <h2>🏆 Clasificación Liga (1 partido/día)</h2>
+      <h2>🏆 Clasificación (1 partido/día)</h2>
       <table>
         <thead><tr><th>#</th><th>Equipo</th><th>PJ</th><th>Pts</th></tr></thead>
         <tbody id="leagueTableBody">
-          <tr style="background:rgba(165,0,68,0.16);font-weight:800;"><td>1</td><td>🔵🔴 FC Barcelona (Jugadores)</td><td>0</td><td>0</td></tr>
-          <tr style="background:rgba(254,190,16,0.14);font-weight:800;"><td>2</td><td>⚪👑 Real Madrid (Jugadores)</td><td>0</td><td>0</td></tr>
+          <tr style="background:rgba(165,0,68,0.16);font-weight:800;"><td>1</td><td>🔵🔴 FC Barcelona</td><td id="fcbPj">0</td><td id="fcbPts">0</td></tr>
+          <tr style="background:rgba(254,190,16,0.14);font-weight:800;"><td>2</td><td>⚪👑 Real Madrid</td><td id="rmaPj">0</td><td id="rmaPts">0</td></tr>
           <tr><td>3</td><td>Atlético de Madrid</td><td>0</td><td>0</td></tr>
           <tr><td>4</td><td>Athletic Club</td><td>0</td><td>0</td></tr>
           <tr><td>5</td><td>Real Sociedad</td><td>0</td><td>0</td></tr>
@@ -415,45 +455,127 @@
     </div>
   </section>
 
-  <!-- MODAL ADMIN (SOLO VISIBLE PARA TI) -->
-  <div id="adminModal" class="container hidden" style="position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:100;overflow-y:auto;padding-top:24px;">
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <h2>⚙️ Panel de Fundador (Admin)</h2>
-        <button class="btn btn-sm btn-outline" onclick="closeAdminModal()">Cerrar ✕</button>
-      </div>
-      <p style="margin-bottom:12px;">Controla el estado del juego, el presupuesto de los clubes y el marcador del partido diario:</p>
-      
-      <label style="font-size:0.8rem;color:var(--gold);font-weight:700;">Fase / Jornada actual:</label>
-      <input type="text" id="admPhase" placeholder="Ej. JORNADA 1 · EN JUEGO" />
-
-      <label style="font-size:0.8rem;color:var(--gold);font-weight:700;">Marcador del partido (ej. 2 - 1):</label>
-      <input type="text" id="admScore" placeholder="Ej. 2 - 1" />
-
-      <label style="font-size:0.8rem;color:var(--gold);font-weight:700;">Crónica / Resumen del resultado:</label>
-      <textarea id="admSummary" rows="2" placeholder="Ej. Victoria del Barça en el minuto 88 con gol de Lamine..."></textarea>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div>
-          <label style="font-size:0.75rem;">Caja Barça (M€):</label>
-          <input type="number" id="admFcbBudget" value="100" />
-        </div>
-        <div>
-          <label style="font-size:0.75rem;">Caja Madrid (M€):</label>
-          <input type="number" id="admRmaBudget" value="100" />
-        </div>
+  <!-- ===================================================================== -->
+  <!-- PANEL SUPREMO DE ADMINISTRADOR (EXCLUSIVO PARA ishaktopro@gmail.com)  -->
+  <!-- ===================================================================== -->
+  <div id="godPanel" class="container hidden" style="position:fixed;inset:0;background:rgba(2,4,10,0.96);z-index:120;overflow-y:auto;padding-top:16px;padding-bottom:40px;">
+    <div class="card" style="border-color:var(--gold);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h2 style="color:var(--gold);">👑 GOD MODE · Control Total</h2>
+        <button class="btn btn-sm btn-outline" onclick="closeGodPanel()">Cerrar ✕</button>
       </div>
 
-      <button class="btn btn-green" onclick="saveAdminState()">💾 Guardar y Actualizar para Todos</button>
+      <div class="admin-tabs">
+        <div class="adm-tab active" onclick="switchAdminTab('clubs', this)">🏟️ Clubes</div>
+        <div class="adm-tab" onclick="switchAdminTab('props', this)">🗳️ Propuestas</div>
+        <div class="adm-tab" onclick="switchAdminTab('market', this)">🛒 Mercado</div>
+        <div class="adm-tab" onclick="switchAdminTab('users', this)">🔨 Usuarios</div>
+      </div>
+
+      <!-- ADMIN 1: CLUBES, ECONOMÍA Y PARTIDOS -->
+      <div id="adm-clubs">
+        <label style="font-size:0.76rem;color:var(--gold);font-weight:800;">Fase / Jornada actual:</label>
+        <input type="text" id="admPhase" placeholder="Ej. JORNADA 1 · EN VIVO" />
+
+        <label style="font-size:0.76rem;color:var(--gold);font-weight:800;">Marcador del Partido (ej. 2 - 1):</label>
+        <input type="text" id="admScore" placeholder="Ej. 2 - 1" />
+
+        <label style="font-size:0.76rem;color:var(--gold);font-weight:800;">Crónica del resultado:</label>
+        <textarea id="admSummary" rows="2"></textarea>
+
+        <h3 style="margin:10px 0 6px;color:#fb7185;">🔵🔴 FC Barcelona</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div><small>Caja (M€):</small><input type="number" id="admFcbBudget" /></div>
+          <div><small>GRL:</small><input type="number" id="admFcbOvr" /></div>
+          <div><small>Días Deuda:</small><input type="number" id="admFcbDebtDays" /></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div><small>Asientos:</small><input type="number" id="admFcbSeats" /></div>
+          <div><small>€/Partido (M):</small><input type="number" step="0.1" id="admFcbIncome" /></div>
+          <div><small>Puntos Liga:</small><input type="number" id="admFcbPts" /></div>
+        </div>
+
+        <h3 style="margin:10px 0 6px;color:var(--gold);">⚪👑 Real Madrid</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div><small>Caja (M€):</small><input type="number" id="admRmaBudget" /></div>
+          <div><small>GRL:</small><input type="number" id="admRmaOvr" /></div>
+          <div><small>Días Deuda:</small><input type="number" id="admRmaDebtDays" /></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <div><small>Asientos:</small><input type="number" id="admRmaSeats" /></div>
+          <div><small>€/Partido (M):</small><input type="number" step="0.1" id="admRmaIncome" /></div>
+          <div><small>Puntos Liga:</small><input type="number" id="admRmaPts" /></div>
+        </div>
+
+        <button class="btn btn-green" style="margin-top:8px;" onclick="saveAllClubStats()">💾 Guardar Todo en Vivo</button>
+      </div>
+
+      <!-- ADMIN 2: LANZAR Y EJECUTAR PROPUESTAS -->
+      <div id="adm-props" class="hidden">
+        <h3>➕ Lanzar Propuesta a un Bando</h3>
+        <select id="admPropClub">
+          <option value="FCB">🔵🔴 Solo para FC Barcelona</option>
+          <option value="RMA">⚪👑 Solo para Real Madrid</option>
+          <option value="BOTH">⚔️ Para AMBOS clubes a la vez</option>
+        </select>
+        <select id="admPropType">
+          <option value="BUY">🟢 Fichaje de Jugador</option>
+          <option value="SELL">🔴 Venta de Jugador</option>
+          <option value="STADIUM">🏟️ Mejora de Estadio / Ingresos</option>
+          <option value="MONEY">💰 Operación Económica / Patrocinio</option>
+        </select>
+        <input type="text" id="admPropTitle" placeholder="Ej. Fichar a Mbappé por 200M €" />
+        <textarea id="admPropDesc" rows="2" placeholder="Ej. Si votáis SÍ, os endeudáis -100M pero sube el GRL +4..."></textarea>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <input type="number" id="admPropMoney" placeholder="Cambio Caja M€ (ej. -200)" />
+          <input type="number" id="admPropOvr" placeholder="Cambio GRL (ej. +4)" />
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <input type="number" id="admPropSeats" placeholder="Cambio Asientos (ej. +10000)" />
+          <input type="number" step="0.1" id="admPropIncome" placeholder="Cambio €/Partido (ej. +1.5)" />
+        </div>
+        <input type="text" id="admPropPlayer" placeholder="Opcional: Añadir jugador (ej. DEL|Mbappé|26|91|200M €)" />
+        <button class="btn btn-gold" onclick="adminCreateProposal()">🚀 Publicar Propuesta Oficial</button>
+
+        <h3 style="margin:14px 0 8px;">⚡ Propuestas Activas (Ejecutar o Borrar)</h3>
+        <div id="admPropsList"></div>
+      </div>
+
+      <!-- ADMIN 3: MERCADO DE FICHAJES (1 A 1 O JSON MASIVO) -->
+      <div id="adm-market" class="hidden">
+        <h3>➕ Añadir 1 Jugador al Mercado</h3>
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:6px;">
+          <select id="mktPos"><option>POR</option><option>DEF</option><option>MED</option><option selected>DEL</option></select>
+          <input type="text" id="mktName" placeholder="Nombre (ej. Erling Haaland)" />
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+          <input type="number" id="mktAge" placeholder="Edad (24)" />
+          <input type="number" id="mktOvr" placeholder="GRL (91)" />
+          <input type="number" id="mktPrice" placeholder="Precio M€ (180)" />
+        </div>
+        <button class="btn btn-blue" onclick="addSingleMarketPlayer()">➕ Añadir Jugador</button>
+
+        <h3 style="margin:14px 0 6px;">📦 Importar Cientos de Jugadores (JSON)</h3>
+        <p style="font-size:0.75rem;margin-bottom:6px;">Formato: <code>[{"pos":"DEL","name":"Haaland","age":24,"ovr":91,"price":180}]</code></p>
+        <textarea id="mktJsonInput" rows="4" placeholder='[{"pos":"DEL","name":"Haaland","age":24,"ovr":91,"price":180},{"pos":"MED","name":"Wirtz","age":22,"ovr":89,"price":130}]'></textarea>
+        <button class="btn btn-green" onclick="importMarketJson()">📥 Importar JSON Masivo</button>
+      </div>
+
+      <!-- ADMIN 4: USUARIOS Y BANEOS -->
+      <div id="adm-users" class="hidden">
+        <h3>🔨 Gestión de Socios y Baneos</h3>
+        <p style="font-size:0.78rem;margin-bottom:8px;">Expulsa trolls o multicuentas al instante:</p>
+        <div id="admUsersList">Cargando usuarios...</div>
+      </div>
     </div>
   </div>
 
   <!-- NAVEGACIÓN INFERIOR -->
   <nav class="bottom-nav">
     <button class="nav-btn active" onclick="goTab('club', this)"><span class="ico">🏟️</span>Mi Club</button>
-    <button class="nav-btn" onclick="goTab('vote', this)"><span class="ico">💸</span>Decisiones</button>
+    <button class="nav-btn" onclick="goTab('vote', this)"><span class="ico">🗳️</span>Votar</button>
     <button class="nav-btn" onclick="goTab('chat', this)"><span class="ico">🔒</span>Vestuario</button>
-    <button class="nav-btn" onclick="goTab('squad', this)"><span class="ico">📋</span>Plantilla</button>
+    <button class="nav-btn" onclick="goTab('squad', this)"><span class="ico">🛒</span>Plantilla</button>
     <button class="nav-btn" onclick="goTab('league', this)"><span class="ico">⚽</span>Partidos</button>
   </nav>
 </div>
@@ -462,8 +584,8 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
   import {
-    getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, collection,
-    query, where, onSnapshot, increment
+    getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, deleteDoc, collection,
+    query, where, onSnapshot, increment, arrayUnion
   } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
   const firebaseConfig = {
@@ -476,8 +598,7 @@
     measurementId: "G-SBY143PY3Y"
   };
 
-  // ⚠️ Pon aquí tu correo de Google para ver el botón secreto de Admin ⚙️
-  const ADMIN_EMAIL = "ezzahouaniishak@gmail.com";
+  const ADMIN_EMAIL = "ishaktopro@gmail.com";
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -486,18 +607,28 @@
 
   let currentUser = null;
   let userProfile = null;
+  let isAdmin = false;
+  let viewingClub = "FCB";
+  let unsubChat = null;
+  let unsubProps = null;
+  let unsubCands = null;
   let allCandidates = [];
+  let allProposals = [];
+  let allUsers = [];
+
   let gameState = {
     phase: "PRETEMPORADA",
     score: "- : -",
-    summary: "1 partido cada día. Ahora mismo estamos formando directivas y votando los primeros fichajes.",
-    fcbBudget: 100, fcbOvr: 82, fcbMoral: 85,
-    rmaBudget: 100, rmaOvr: 82, rmaMoral: 85
+    summary: "1 partido cada día. Formad directivas y votad las primeras operaciones.",
+    fcbBudget: 100, fcbOvr: 82, fcbSeats: 60000, fcbIncome: 3.0, fcbDebtDays: 0, fcbPts: 0, fcbPj: 0,
+    rmaBudget: 100, rmaOvr: 82, rmaSeats: 60000, rmaIncome: 3.0, rmaDebtDays: 0, rmaPts: 0, rmaPj: 0,
+    fcbExtraPlayers: [],
+    rmaExtraPlayers: []
   };
 
   const ROLES = ["Presidente/a", "Entrenador/a", "Director/a Deportivo/a", "Director/a de Cantera", "Capitán/a"];
 
-  const SQUADS = {
+  const BASE_SQUADS = {
     FCB: [
       { pos: "POR", name: "Ter Stegen", age: 32, ovr: 84, val: "25M €" },
       { pos: "DEF", name: "Koundé", age: 25, ovr: 83, val: "45M €" },
@@ -534,24 +665,41 @@
   onAuthStateChanged(auth, async (user) => {
     if (!user) return;
     currentUser = user;
-    if (user.email === ADMIN_EMAIL) {
-      document.getElementById("adminToggleBtn").classList.remove("hidden");
+    isAdmin = (user.email || "").toLowerCase() === ADMIN_EMAIL.toLowerCase();
+
+    if (isAdmin) {
+      document.getElementById("godModeBtn").classList.remove("hidden");
+      document.getElementById("infiltrateBar").classList.remove("hidden");
     }
-    const snap = await getDoc(doc(db, "users", user.uid));
-    if (snap.exists()) {
-      userProfile = snap.data();
-      startApp();
-    } else {
-      document.getElementById("authView").classList.add("hidden");
-      document.getElementById("chooseClubView").classList.remove("hidden");
-    }
+
+    onSnapshot(doc(db, "users", user.uid), (snap) => {
+      if (snap.exists()) {
+        userProfile = snap.data();
+        if (userProfile.banned && !isAdmin) {
+          document.getElementById("authView").classList.add("hidden");
+          document.getElementById("mainApp").classList.add("hidden");
+          document.getElementById("bannedView").classList.remove("hidden");
+          return;
+        }
+        if (!document.getElementById("mainApp").classList.contains("hidden")) return;
+        viewingClub = userProfile.club;
+        startApp();
+      } else {
+        document.getElementById("authView").classList.add("hidden");
+        document.getElementById("chooseClubView").classList.remove("hidden");
+      }
+    });
   });
 
   window.selectClub = async (club) => {
     const nick = document.getElementById("nicknameInput").value.trim();
     if (nick.length < 3) return alert("Escribe un apodo de al menos 3 letras.");
-    userProfile = { uid: currentUser.uid, nickname: nick, club, votes: {}, propVotes: {}, joinedAt: Date.now() };
+    userProfile = {
+      uid: currentUser.uid, email: currentUser.email, nickname: nick,
+      club, banned: false, votes: {}, propVotes: {}, joinedAt: Date.now()
+    };
     await setDoc(doc(db, "users", currentUser.uid), userProfile);
+    viewingClub = club;
     startApp();
   };
 
@@ -560,221 +708,69 @@
     document.getElementById("chooseClubView").classList.add("hidden");
     document.getElementById("mainApp").classList.remove("hidden");
 
-    const isFcb = userProfile.club === "FCB";
-    document.getElementById("heroClubCard").classList.add(isFcb ? "card-hero-fcb" : "card-hero-rma");
+    applyClubTheme();
+    listenGameState();
+    listenUsers();
+    listenMarket();
+    bindClubStreams();
+  }
+
+  window.switchViewClub = (club) => {
+    if (!isAdmin) return;
+    viewingClub = club;
+    applyClubTheme();
+    bindClubStreams();
+    updateClubUI();
+  };
+
+  function applyClubTheme() {
+    const isFcb = viewingClub === "FCB";
+    document.getElementById("viewingClubLabel").textContent = isFcb ? "FC Barcelona" : "Real Madrid";
+    const hero = document.getElementById("heroClubCard");
+    hero.classList.remove("hero-fcb", "hero-rma");
+    hero.classList.add(isFcb ? "hero-fcb" : "hero-rma");
+
     document.getElementById("clubTag").textContent = isFcb ? "BÚNKER OFICIAL · FC BARCELONA" : "BÚNKER OFICIAL · REAL MADRID";
     document.getElementById("clubNameTitle").textContent = isFcb ? "FC Barcelona" : "Real Madrid CF";
     document.getElementById("clubBigCrest").textContent = isFcb ? "🔵🔴" : "⚪👑";
-    document.getElementById("socioInfoLine").innerHTML = `Socio: <strong>${escapeHtml(userProfile.nickname)}</strong> · Bando permanente`;
-
-    renderSquad();
-    listenGameState();
-    listenMembers();
-    listenProposals();
-    listenCandidates();
-    listenPrivateChat();
+    document.getElementById("socioInfoLine").innerHTML = `Socio: <strong>${escapeHtml(userProfile.nickname)}</strong> ${isAdmin ? '👑' : ''}`;
   }
 
-  function listenGameState() {
-    onSnapshot(doc(db, "system", "state"), (snap) => {
-      if (snap.exists()) gameState = { ...gameState, ...snap.data() };
-      const isFcb = userProfile.club === "FCB";
-      const budget = isFcb ? gameState.fcbBudget : gameState.rmaBudget;
-      const ovr = isFcb ? gameState.fcbOvr : gameState.rmaOvr;
-      const moral = isFcb ? gameState.fcbMoral : gameState.rmaMoral;
+  function bindClubStreams() {
+    if (unsubProps) unsubProps();
+    if (unsubCands) unsubCands();
+    if (unsubChat) unsubChat();
 
-      document.getElementById("globalPhaseBadge").innerHTML = `<span class="dot"></span> ${escapeHtml(gameState.phase)}`;
-      document.getElementById("matchLabel").textContent = gameState.phase;
-      document.getElementById("scoreDisplay").textContent = gameState.score;
-      document.getElementById("matchSummaryText").textContent = gameState.summary;
-
-      document.getElementById("statBudget").textContent = `${budget}.0M €`;
-      document.getElementById("barBudget").style.width = `${Math.min(100, Math.max(5, budget))}%`;
-      document.getElementById("statOvr").textContent = `${ovr} / 100`;
-      document.getElementById("barOvr").style.width = `${ovr}%`;
-      document.getElementById("statMoral").textContent = `${moral}%`;
-      document.getElementById("barMoral").style.width = `${moral}%`;
+    // Propuestas del bando
+    const qProps = query(collection(db, "proposals"), where("club", "in", [viewingClub, "BOTH"]));
+    unsubProps = onSnapshot(qProps, (snap) => {
+      allProposals = [];
+      snap.forEach(d => allProposals.push({ id: d.id, ...d.data() }));
+      allProposals.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+      renderProposals();
+      if (isAdmin) renderAdminProposals();
     });
-  }
 
-  function listenMembers() {
-    onSnapshot(collection(db, "users"), (snap) => {
-      let fcb = 0, rma = 0;
-      snap.forEach(d => d.data().club === "FCB" ? fcb++ : rma++);
-      document.getElementById("statMembers").textContent = userProfile.club === "FCB" ? fcb : rma;
-      document.getElementById("compFcbMembers").textContent = fcb;
-      document.getElementById("compRmaMembers").textContent = rma;
-    });
-  }
-
-  // PROPUESTAS ECONÓMICAS Y DE FICHAJES (SOLO DEL MISMO BANDO)
-  window.createProposal = async () => {
-    const type = document.getElementById("propType").value;
-    const title = document.getElementById("propTitle").value.trim();
-    const money = Number(document.getElementById("propMoney").value) || 0;
-    const ovr = Number(document.getElementById("propOvr").value) || 0;
-    const desc = document.getElementById("propDesc").value.trim();
-    if (!title || !desc) return alert("Escribe el título y los detalles de tu propuesta.");
-
-    await addDoc(collection(db, "proposals"), {
-      club: userProfile.club,
-      type, title, money, ovr, desc,
-      author: userProfile.nickname,
-      yes: 1, no: 0,
-      ts: Date.now()
-    });
-    document.getElementById("propTitle").value = "";
-    document.getElementById("propMoney").value = "";
-    document.getElementById("propOvr").value = "";
-    document.getElementById("propDesc").value = "";
-    alert("¡Propuesta lanzada a votación en tu club!");
-  };
-
-  function listenProposals() {
-    const q = query(collection(db, "proposals"), where("club", "==", userProfile.club));
-    onSnapshot(q, (snap) => {
-      const list = [];
-      snap.forEach(d => list.push({ id: d.id, ...d.data() }));
-      list.sort((a, b) => (b.ts || 0) - (a.ts || 0));
-
-      const cont = document.getElementById("proposalsList");
-      if (!list.length) {
-        cont.innerHTML = "<p>Aún no hay propuestas. ¡Crea la primera arriba para fichar o gestionar el dinero!</p>";
-        return;
-      }
-      const badgeMap = {
-        BUY: ['tag-buy', '🟢 Fichaje'],
-        SELL: ['tag-sell', '🔴 Venta'],
-        MONEY: ['tag-money', '💰 Economía'],
-        TACTIC: ['tag-tactic', '📋 Táctica']
-      };
-
-      cont.innerHTML = list.map(p => {
-        const total = (p.yes || 0) + (p.no || 0);
-        const yesPct = total ? Math.round((p.yes / total) * 100) : 50;
-        const noPct = 100 - yesPct;
-        const myVote = userProfile.propVotes ? userProfile.propVotes[p.id] : null;
-        const [cls, lbl] = badgeMap[p.type] || ['tag-money', 'Propuesta'];
-        const impactTxt = `${p.money >= 0 ? '+' : ''}${p.money}M € · Media ${p.ovr >= 0 ? '+' : ''}${p.ovr}`;
-
-        return `
-          <div class="prop-card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-              <span class="prop-badge ${cls}">${lbl}</span>
-              <span style="font-size:0.75rem;font-weight:800;color:var(--gold);">${impactTxt}</span>
-            </div>
-            <strong style="font-size:0.98rem;display:block;margin-bottom:4px;">${escapeHtml(p.title)}</strong>
-            <p style="font-size:0.82rem;margin-bottom:6px;">${escapeHtml(p.desc)}</p>
-            <span style="font-size:0.72rem;color:var(--muted);">Propuesto por ${escapeHtml(p.author)}</span>
-
-            <div class="vote-bar-wrap">
-              <div class="vote-yes" style="width:${yesPct}%;"></div>
-              <div class="vote-no" style="width:${noPct}%;"></div>
-            </div>
-            <div style="display:flex;justify-content:space-between;font-size:0.76rem;font-weight:800;">
-              <span style="color:var(--green);">✅ A favor: ${p.yes || 0} (${yesPct}%)</span>
-              <span style="color:var(--red);">❌ En contra: ${p.no || 0} (${noPct}%)</span>
-            </div>
-
-            <div class="vote-actions">
-              <button class="btn btn-sm ${myVote === 'yes' ? 'btn-green' : 'btn-outline'}" onclick="voteProp('${p.id}', 'yes')">✅ Aprobar</button>
-              <button class="btn btn-sm ${myVote === 'no' ? 'btn-red' : 'btn-outline'}" onclick="voteProp('${p.id}', 'no')">❌ Rechazar</button>
-            </div>
-          </div>
-        `;
-      }).join("");
-    });
-  }
-
-  window.voteProp = async (propId, choice) => {
-    const prev = userProfile.propVotes ? userProfile.propVotes[propId] : null;
-    if (prev === choice) return;
-    const updates = { [choice]: increment(1) };
-    if (prev) updates[prev] = increment(-1);
-    await updateDoc(doc(db, "proposals", propId), updates);
-    userProfile.propVotes = { ...(userProfile.propVotes || {}), [propId]: choice };
-    await updateDoc(doc(db, "users", currentUser.uid), { propVotes: userProfile.propVotes });
-  };
-
-  // CARGOS Y CANDIDATURAS
-  function listenCandidates() {
-    const q = query(collection(db, "candidates"), where("club", "==", userProfile.club));
-    onSnapshot(q, (snap) => {
+    // Candidatos del bando
+    const qCands = query(collection(db, "candidates"), where("club", "==", viewingClub));
+    unsubCands = onSnapshot(qCands, (snap) => {
       allCandidates = [];
       snap.forEach(d => allCandidates.push({ id: d.id, ...d.data() }));
       allCandidates.sort((a, b) => (b.votes || 0) - (a.votes || 0));
-
-      document.getElementById("rolesBoard").innerHTML = ROLES.map(role => {
-        const leader = allCandidates.find(c => c.role === role);
-        return `
-          <div class="role-row">
-            <strong style="font-size:0.88rem;">${role}</strong>
-            <span class="role-pill">${leader ? `${escapeHtml(leader.author)} (${leader.votes}v)` : "Sin elegir"}</span>
-          </div>
-        `;
-      }).join("");
-
-      const cont = document.getElementById("candidatesContainer");
-      cont.innerHTML = allCandidates.length ? allCandidates.map(c => {
-        const voted = userProfile.votes && userProfile.votes[c.role] === c.id;
-        return `
-          <div class="prop-card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-              <strong>${escapeHtml(c.author)}</strong>
-              <span class="role-pill">${c.role}</span>
-            </div>
-            <div style="color:var(--gold);font-style:italic;font-size:0.84rem;margin-bottom:4px;">"${escapeHtml(c.slogan)}"</div>
-            <p style="font-size:0.82rem;margin-bottom:8px;">${escapeHtml(c.program)}</p>
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <span style="font-weight:800;font-size:0.82rem;">🗳️ ${c.votes || 0} votos</span>
-              <button class="btn btn-sm ${voted ? 'btn-green' : 'btn-outline'}" onclick="voteFor('${c.id}', '${c.role}')">
-                ${voted ? '✅ Votado' : 'Votar'}
-              </button>
-            </div>
-          </div>
-        `;
-      }).join("") : "<p>Nadie se ha presentado aún. ¡Postúlate arriba!</p>";
+      renderCandidates();
     });
-  }
 
-  window.createCandidate = async () => {
-    const role = document.getElementById("roleSelect").value;
-    const slogan = document.getElementById("sloganInput").value.trim();
-    const program = document.getElementById("programInput").value.trim();
-    if (!slogan || !program) return alert("Rellena eslogan y programa.");
-    if (allCandidates.find(c => c.uid === currentUser.uid)) return alert("Ya tienes una candidatura activa.");
-
-    await addDoc(collection(db, "candidates"), {
-      uid: currentUser.uid, club: userProfile.club, role,
-      author: userProfile.nickname, slogan, program, votes: 1, ts: Date.now()
-    });
-    document.getElementById("sloganInput").value = "";
-    document.getElementById("programInput").value = "";
-    alert("¡Candidatura publicada!");
-  };
-
-  window.voteFor = async (candId, role) => {
-    const prevId = userProfile.votes ? userProfile.votes[role] : null;
-    if (prevId === candId) return;
-    if (prevId) await updateDoc(doc(db, "candidates", prevId), { votes: increment(-1) }).catch(() => {});
-    await updateDoc(doc(db, "candidates", candId), { votes: increment(1) });
-    userProfile.votes = { ...(userProfile.votes || {}), [role]: candId };
-    await updateDoc(doc(db, "users", currentUser.uid), { votes: userProfile.votes });
-  };
-
-  // CHAT EXCLUSIVO DEL BANDO (BÚNKER CERRADO)
-  function listenPrivateChat() {
-    const roomId = `club_${userProfile.club}`;
-    const q = query(collection(db, "messages"), where("room", "==", roomId));
-    onSnapshot(q, (snap) => {
+    // Chat secreto del bando
+    const qChat = query(collection(db, "messages"), where("room", "==", `club_${viewingClub}`));
+    unsubChat = onSnapshot(qChat, (snap) => {
       const box = document.getElementById("chatBox");
       const msgs = [];
       snap.forEach(d => msgs.push(d.data()));
       msgs.sort((a, b) => (a.ts || 0) - (b.ts || 0));
-      box.innerHTML = msgs.slice(-60).map(m => {
+      box.innerHTML = msgs.slice(-70).map(m => {
         const mine = m.uid === currentUser.uid;
         return `
-          <div class="msg ${mine ? 'mine' : ''}">
+          <div class="msg ${mine ? 'mine' : ''} ${m.isAdmin ? 'admin-msg' : ''}">
             <div class="msg-head">
               <strong>${escapeHtml(m.author)}</strong>
               <span class="msg-role">${escapeHtml(m.roleTag || "SOCIO")}</span>
@@ -787,76 +783,456 @@
     });
   }
 
-  let lastMsg = 0;
-  window.sendChat = async () => {
-    const input = document.getElementById("msgInput");
-    const text = input.value.trim();
-    if (!text) return;
-    if (Date.now() - lastMsg < 2000) return;
-    lastMsg = Date.now();
-
-    const myCand = allCandidates.find(c => c.uid === currentUser.uid);
-    const roleTag = myCand ? myCand.role : "SOCIO";
-    input.value = "";
-
-    await addDoc(collection(db, "messages"), {
-      uid: currentUser.uid, room: `club_${userProfile.club}`, club: userProfile.club,
-      author: userProfile.nickname, roleTag, text, ts: Date.now()
+  function listenGameState() {
+    onSnapshot(doc(db, "system", "state"), (snap) => {
+      if (snap.exists()) gameState = { ...gameState, ...snap.data() };
+      updateClubUI();
     });
-  };
+  }
 
-  // INVITAR AMIGOS AL BANDO
-  window.shareInvite = () => {
-    const team = userProfile.club === "FCB" ? "FC Barcelona 🔵🔴" : "Real Madrid ⚪👑";
-    const text = `¡Únete a mi bando del ${team} en EL CLÁSICO 2.0! Necesitamos socios para votar fichajes, gestionar el dinero y ganar al rival: ${window.location.href}`;
-    if (navigator.share) {
-      navigator.share({ title: "El Clásico 2.0", text, url: window.location.href });
+  function updateClubUI() {
+    const isFcb = viewingClub === "FCB";
+    const budget = isFcb ? gameState.fcbBudget : gameState.rmaBudget;
+    const ovr = isFcb ? gameState.fcbOvr : gameState.rmaOvr;
+    const seats = isFcb ? gameState.fcbSeats : gameState.rmaSeats;
+    const income = isFcb ? gameState.fcbIncome : gameState.rmaIncome;
+    const debtDays = isFcb ? gameState.fcbDebtDays : gameState.rmaDebtDays;
+
+    document.getElementById("globalPhaseBadge").innerHTML = `<span class="dot"></span> ${escapeHtml(gameState.phase)}`;
+    document.getElementById("matchLabel").textContent = gameState.phase;
+    document.getElementById("scoreDisplay").textContent = gameState.score;
+    document.getElementById("matchSummaryText").textContent = gameState.summary;
+
+    const bEl = document.getElementById("statBudget");
+    bEl.textContent = `${budget.toFixed(1)}M €`;
+    bEl.style.color = budget < 0 ? "#ef4444" : "#4ade80";
+    document.getElementById("barBudget").style.width = `${Math.min(100, Math.max(6, Math.abs(budget)))}%`;
+    document.getElementById("barBudget").style.background = budget < 0 ? "#ef4444" : "#4ade80";
+
+    const bAlert = document.getElementById("bankruptcyBox");
+    if (budget < 0) {
+      bAlert.classList.remove("hidden");
+      document.getElementById("bankruptcyText").textContent = `Deuda actual: ${budget.toFixed(1)}M € · Lleváis ${debtDays} / 10 días en bancarrota. ¡Vended jugadores o generad ingresos antes del día 10 o perderéis!`;
     } else {
-      navigator.clipboard.writeText(text);
-      alert("¡Enlace de reclutamiento copiado! Pégalo en WhatsApp, TikTok o Telegram para traer socios.");
+      bAlert.classList.add("hidden");
     }
-  };
 
-  // ADMIN PANEL
-  window.openAdminModal = () => {
-    document.getElementById("admPhase").value = gameState.phase;
-    document.getElementById("admScore").value = gameState.score;
-    document.getElementById("admSummary").value = gameState.summary;
-    document.getElementById("admFcbBudget").value = gameState.fcbBudget;
-    document.getElementById("admRmaBudget").value = gameState.rmaBudget;
-    document.getElementById("adminModal").classList.remove("hidden");
-  };
-  window.closeAdminModal = () => document.getElementById("adminModal").classList.add("hidden");
-  window.saveAdminState = async () => {
-    await setDoc(doc(db, "system", "state"), {
-      phase: document.getElementById("admPhase").value.trim() || "PRETEMPORADA",
-      score: document.getElementById("admScore").value.trim() || "- : -",
-      summary: document.getElementById("admSummary").value.trim(),
-      fcbBudget: Number(document.getElementById("admFcbBudget").value),
-      rmaBudget: Number(document.getElementById("admRmaBudget").value)
-    }, { merge: true });
-    closeAdminModal();
-    alert("¡Estado actualizado en tiempo real para todos los jugadores!");
-  };
+    document.getElementById("statOvr").textContent = `${ovr} / 100`;
+    document.getElementById("barOvr").style.width = `${ovr}%`;
+    document.getElementById("statSeats").textContent = Number(seats).toLocaleString("es-ES");
+    document.getElementById("barSeats").style.width = `${Math.min(100, (seats / 105000) * 100)}%`;
+    document.getElementById("statIncome").textContent = `+${Number(income).toFixed(1)}M €`;
+
+    document.getElementById("compFcbSeats").textContent = Number(gameState.fcbSeats).toLocaleString("es-ES");
+    document.getElementById("compRmaSeats").textContent = Number(gameState.rmaSeats).toLocaleString("es-ES");
+    document.getElementById("fcbPts").textContent = gameState.fcbPts || 0;
+    document.getElementById("rmaPts").textContent = gameState.rmaPts || 0;
+
+    renderSquad();
+  }
 
   function renderSquad() {
-    document.getElementById("squadTitle").textContent = userProfile.club === "FCB" ? "📋 Plantilla FC Barcelona" : "📋 Plantilla Real Madrid";
-    document.getElementById("squadBody").innerHTML = SQUADS[userProfile.club].map(p => `
+    const extra = viewingClub === "FCB" ? (gameState.fcbExtraPlayers || []) : (gameState.rmaExtraPlayers || []);
+    const fullSquad = [...BASE_SQUADS[viewingClub], ...extra];
+    document.getElementById("squadTitle").textContent = viewingClub === "FCB" ? "📋 Plantilla FC Barcelona" : "📋 Plantilla Real Madrid";
+    document.getElementById("squadBody").innerHTML = fullSquad.map(p => `
       <tr>
         <td><strong>${p.pos}</strong></td>
-        <td>${p.name}</td>
+        <td>${escapeHtml(p.name)}</td>
         <td>${p.age}</td>
-        <td style="color:#60a5fa;font-weight:800;">${p.ovr}</td>
+        <td style="color:#60a5fa;font-weight:900;">${p.ovr}</td>
         <td style="color:#4ade80;font-weight:700;">${p.val}</td>
       </tr>
     `).join("");
   }
 
-  window.switchVoteSub = (sub) => {
-    document.getElementById("subTabProps").classList.toggle("active", sub === "props");
-    document.getElementById("subTabRoles").classList.toggle("active", sub === "roles");
-    document.getElementById("votePropsPanel").classList.toggle("hidden", sub !== "props");
-    document.getElementById("voteRolesPanel").classList.toggle("hidden", sub !== "roles");
+  function renderProposals() {
+    const cont = document.getElementById("proposalsList");
+    if (!allProposals.length) {
+      cont.innerHTML = "<p>Aún no hay propuestas oficiales abiertas para tu club.</p>";
+      return;
+    }
+    const tags = {
+      BUY: ['tag-buy', '🟢 Fichaje'],
+      SELL: ['tag-sell', '🔴 Venta'],
+      STADIUM: ['tag-stadium', '🏟️ Estadio'],
+      MONEY: ['tag-money', '💰 Economía']
+    };
+
+    cont.innerHTML = allProposals.map(p => {
+      const votesMap = viewingClub === "FCB" ? (p.fcbVotes || {}) : (p.rmaVotes || {});
+      let yes = 0, no = 0;
+      Object.values(votesMap).forEach(v => v === "yes" ? yes++ : no++);
+      const total = yes + no;
+      const yesPct = total ? Math.round((yes / total) * 100) : 50;
+      const myVote = votesMap[currentUser.uid];
+      const [cls, lbl] = tags[p.type] || ['tag-money', 'Decisión'];
+
+      return `
+        <div class="prop-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <span class="tag ${cls}">${lbl}</span>
+            ${p.executed ? '<span class="tag tag-done">✅ EJECUTADA</span>' : '<span style="font-size:0.72rem;color:var(--gold);font-weight:800;">EN VOTACIÓN</span>'}
+          </div>
+          <strong style="font-size:0.98rem;display:block;margin-bottom:4px;">${escapeHtml(p.title)}</strong>
+          <p style="font-size:0.82rem;">${escapeHtml(p.desc)}</p>
+          <div class="impact-chips">
+            ${p.money ? `<span class="chip" style="color:${p.money > 0 ? '#4ade80' : '#f87171'};">${p.money > 0 ? '+' : ''}${p.money}M €</span>` : ''}
+            ${p.ovr ? `<span class="chip" style="color:#60a5fa;">GRL ${p.ovr > 0 ? '+' : ''}${p.ovr}</span>` : ''}
+            ${p.seats ? `<span class="chip" style="color:#fbbf24;">+${p.seats} asientos</span>` : ''}
+            ${p.income ? `<span class="chip" style="color:#34d399;">+${p.income}M €/partido</span>` : ''}
+          </div>
+          <div class="vote-bar">
+            <div class="v-yes" style="width:${yesPct}%;"></div>
+            <div class="v-no" style="width:${100 - yesPct}%;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.75rem;font-weight:800;margin-bottom:8px;">
+            <span style="color:var(--green);">✅ SÍ: ${yes} (${yesPct}%)</span>
+            <span style="color:var(--red);">❌ NO: ${no} (${100 - yesPct}%)</span>
+          </div>
+          ${!p.executed ? `
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <button class="btn btn-sm ${myVote === 'yes' ? 'btn-green' : 'btn-outline'}" onclick="castPropVote('${p.id}', 'yes')">✅ Votar SÍ</button>
+              <button class="btn btn-sm ${myVote === 'no' ? 'btn-red' : 'btn-outline'}" onclick="castPropVote('${p.id}', 'no')">❌ Votar NO</button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }).join("");
+  }
+
+  window.castPropVote = async (propId, choice) => {
+    const field = viewingClub === "FCB" ? `fcbVotes.${currentUser.uid}` : `rmaVotes.${currentUser.uid}`;
+    await updateDoc(doc(db, "proposals", propId), { [field]: choice });
+  };
+
+  // CANDIDATOS Y CARGOS
+  function renderCandidates() {
+    document.getElementById("rolesBoard").innerHTML = ROLES.map(role => {
+      const top = allCandidates.find(c => c.role === role);
+      return `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);">
+          <strong style="font-size:0.86rem;">${role}</strong>
+          <span style="font-size:0.73rem;font-weight:800;padding:3px 8px;border-radius:7px;background:rgba(245,158,11,0.15);color:var(--gold);">
+            ${top ? `${escapeHtml(top.author)} (${top.votes}v)` : "Vacante"}
+          </span>
+        </div>
+      `;
+    }).join("");
+
+    const cont = document.getElementById("candidatesContainer");
+    cont.innerHTML = allCandidates.length ? allCandidates.map(c => {
+      const voted = userProfile.votes && userProfile.votes[c.role] === c.id;
+      return `
+        <div class="prop-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <strong>${escapeHtml(c.author)}</strong>
+            <span class="tag tag-money">${c.role}</span>
+          </div>
+          <div style="color:var(--gold);font-style:italic;font-size:0.83rem;margin-bottom:4px;">"${escapeHtml(c.slogan)}"</div>
+          <p style="font-size:0.8rem;margin-bottom:8px;">${escapeHtml(c.program)}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-weight:800;font-size:0.8rem;">🗳️ ${c.votes || 0} votos</span>
+            <button class="btn btn-sm ${voted ? 'btn-green' : 'btn-outline'}" onclick="voteFor('${c.id}', '${c.role}')">
+              ${voted ? '✅ Votado' : 'Votar'}
+            </button>
+          </div>
+        </div>
+      `;
+    }).join("") : "<p>Nadie se ha presentado aún.</p>";
+  }
+
+  window.createCandidate = async () => {
+    const role = document.getElementById("roleSelect").value;
+    const slogan = document.getElementById("sloganInput").value.trim();
+    const program = document.getElementById("programInput").value.trim();
+    if (!slogan || !program) return alert("Rellena eslogan y programa.");
+    if (allCandidates.find(c => c.uid === currentUser.uid)) return alert("Ya tienes una candidatura.");
+
+    await addDoc(collection(db, "candidates"), {
+      uid: currentUser.uid, club: viewingClub, role,
+      author: userProfile.nickname, slogan, program, votes: 1, ts: Date.now()
+    });
+    document.getElementById("sloganInput").value = "";
+    document.getElementById("programInput").value = "";
+  };
+
+  window.voteFor = async (candId, role) => {
+    const prevId = userProfile.votes ? userProfile.votes[role] : null;
+    if (prevId === candId) return;
+    if (prevId) await updateDoc(doc(db, "candidates", prevId), { votes: increment(-1) }).catch(() => {});
+    await updateDoc(doc(db, "candidates", candId), { votes: increment(1) });
+    userProfile.votes = { ...(userProfile.votes || {}), [role]: candId };
+    await updateDoc(doc(db, "users", currentUser.uid), { votes: userProfile.votes });
+  };
+
+  // CHAT PRIVADO
+  let lastMsg = 0;
+  window.sendChat = async () => {
+    const input = document.getElementById("msgInput");
+    const text = input.value.trim();
+    if (!text) return;
+    if (Date.now() - lastMsg < 1800) return;
+    lastMsg = Date.now();
+
+    const myCand = allCandidates.find(c => c.uid === currentUser.uid);
+    const roleTag = isAdmin ? "👑 FUNDADOR" : (myCand ? myCand.role : "SOCIO");
+    input.value = "";
+
+    await addDoc(collection(db, "messages"), {
+      uid: currentUser.uid, room: `club_${viewingClub}`, club: viewingClub,
+      author: userProfile.nickname, roleTag, isAdmin, text, ts: Date.now()
+    });
+  };
+
+  // MERCADO DE FICHAJES
+  function listenMarket() {
+    onSnapshot(collection(db, "market"), (snap) => {
+      const list = [];
+      snap.forEach(d => list.push({ id: d.id, ...d.data() }));
+      list.sort((a, b) => (b.ovr || 0) - (a.ovr || 0));
+      const cont = document.getElementById("marketList");
+      cont.innerHTML = list.length ? list.map(p => `
+        <div class="market-item">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="ovr-badge">${p.ovr}</div>
+            <div>
+              <strong>${escapeHtml(p.name)}</strong>
+              <div style="font-size:0.75rem;color:var(--muted);">${p.pos} · ${p.age} años</div>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-weight:900;color:#4ade80;font-size:0.9rem;">${p.price}M €</div>
+            ${isAdmin ? `<button class="btn btn-sm btn-red" style="margin-top:4px;padding:3px 7px;font-size:0.68rem;" onclick="deleteMarketPlayer('${p.id}')">Quitar</button>` : ''}
+          </div>
+        </div>
+      `).join("") : "<p>El mercado está cerrado ahora mismo. El administrador abrirá jugadores pronto.</p>";
+    });
+  }
+
+  // USUARIOS
+  function listenUsers() {
+    onSnapshot(collection(db, "users"), (snap) => {
+      allUsers = [];
+      let fcb = 0, rma = 0;
+      snap.forEach(d => {
+        const u = d.data();
+        allUsers.push(u);
+        if (!u.banned) u.club === "FCB" ? fcb++ : rma++;
+      });
+      document.getElementById("statMembers").textContent = viewingClub === "FCB" ? fcb : rma;
+      document.getElementById("compFcbMembers").textContent = fcb;
+      document.getElementById("compRmaMembers").textContent = rma;
+      if (isAdmin) renderAdminUsers();
+    });
+  }
+
+  // =========================================================================
+  // FUNCIONES EXCLUSIVAS DEL GOD MODE (ishaktopro@gmail.com)
+  // =========================================================================
+  window.openGodPanel = () => {
+    if (!isAdmin) return;
+    document.getElementById("admPhase").value = gameState.phase;
+    document.getElementById("admScore").value = gameState.score;
+    document.getElementById("admSummary").value = gameState.summary;
+    document.getElementById("admFcbBudget").value = gameState.fcbBudget;
+    document.getElementById("admFcbOvr").value = gameState.fcbOvr;
+    document.getElementById("admFcbDebtDays").value = gameState.fcbDebtDays || 0;
+    document.getElementById("admFcbSeats").value = gameState.fcbSeats;
+    document.getElementById("admFcbIncome").value = gameState.fcbIncome;
+    document.getElementById("admFcbPts").value = gameState.fcbPts || 0;
+
+    document.getElementById("admRmaBudget").value = gameState.rmaBudget;
+    document.getElementById("admRmaOvr").value = gameState.rmaOvr;
+    document.getElementById("admRmaDebtDays").value = gameState.rmaDebtDays || 0;
+    document.getElementById("admRmaSeats").value = gameState.rmaSeats;
+    document.getElementById("admRmaIncome").value = gameState.rmaIncome;
+    document.getElementById("admRmaPts").value = gameState.rmaPts || 0;
+
+    document.getElementById("godPanel").classList.remove("hidden");
+  };
+  window.closeGodPanel = () => document.getElementById("godPanel").classList.add("hidden");
+
+  window.saveAllClubStats = async () => {
+    if (!isAdmin) return;
+    await setDoc(doc(db, "system", "state"), {
+      phase: document.getElementById("admPhase").value.trim(),
+      score: document.getElementById("admScore").value.trim(),
+      summary: document.getElementById("admSummary").value.trim(),
+      fcbBudget: Number(document.getElementById("admFcbBudget").value),
+      fcbOvr: Number(document.getElementById("admFcbOvr").value),
+      fcbDebtDays: Number(document.getElementById("admFcbDebtDays").value),
+      fcbSeats: Number(document.getElementById("admFcbSeats").value),
+      fcbIncome: Number(document.getElementById("admFcbIncome").value),
+      fcbPts: Number(document.getElementById("admFcbPts").value),
+      rmaBudget: Number(document.getElementById("admRmaBudget").value),
+      rmaOvr: Number(document.getElementById("admRmaOvr").value),
+      rmaDebtDays: Number(document.getElementById("admRmaDebtDays").value),
+      rmaSeats: Number(document.getElementById("admRmaSeats").value),
+      rmaIncome: Number(document.getElementById("admRmaIncome").value),
+      rmaPts: Number(document.getElementById("admRmaPts").value)
+    }, { merge: true });
+    alert("✅ ¡Datos y marcadores actualizados en tiempo real!");
+  };
+
+  window.adminCreateProposal = async () => {
+    if (!isAdmin) return;
+    const club = document.getElementById("admPropClub").value;
+    const type = document.getElementById("admPropType").value;
+    const title = document.getElementById("admPropTitle").value.trim();
+    const desc = document.getElementById("admPropDesc").value.trim();
+    const money = Number(document.getElementById("admPropMoney").value) || 0;
+    const ovr = Number(document.getElementById("admPropOvr").value) || 0;
+    const seats = Number(document.getElementById("admPropSeats").value) || 0;
+    const income = Number(document.getElementById("admPropIncome").value) || 0;
+    const playerRaw = document.getElementById("admPropPlayer").value.trim();
+
+    if (!title) return alert("Pon un título a la propuesta.");
+    await addDoc(collection(db, "proposals"), {
+      club, type, title, desc, money, ovr, seats, income, playerRaw,
+      fcbVotes: {}, rmaVotes: {}, executed: false, ts: Date.now()
+    });
+    document.getElementById("admPropTitle").value = "";
+    document.getElementById("admPropDesc").value = "";
+    document.getElementById("admPropPlayer").value = "";
+    alert("🚀 Propuesta lanzada a votación.");
+  };
+
+  function renderAdminProposals() {
+    const cont = document.getElementById("admPropsList");
+    cont.innerHTML = allProposals.map(p => `
+      <div class="prop-card" style="padding:10px;">
+        <strong>[${p.club}] ${escapeHtml(p.title)}</strong>
+        <div style="font-size:0.75rem;color:var(--muted);margin:4px 0;">
+          Caja: ${p.money}M€ · GRL: ${p.ovr} · Asientos: ${p.seats} · €/Part: ${p.income}M
+        </div>
+        <div style="display:flex;gap:6px;margin-top:6px;">
+          ${!p.executed ? `<button class="btn btn-sm btn-green" onclick="executeProposal('${p.id}')">⚡ Ejecutar en ${viewingClub}</button>` : '<span class="tag tag-done">Ejecutada</span>'}
+          <button class="btn btn-sm btn-red" onclick="deleteProposal('${p.id}')">🗑️ Borrar</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  window.executeProposal = async (propId) => {
+    if (!isAdmin) return;
+    const p = allProposals.find(x => x.id === propId);
+    if (!p) return;
+    const isFcb = viewingClub === "FCB";
+    const updates = {};
+    if (isFcb) {
+      updates.fcbBudget = Number(gameState.fcbBudget) + (p.money || 0);
+      updates.fcbOvr = Number(gameState.fcbOvr) + (p.ovr || 0);
+      updates.fcbSeats = Number(gameState.fcbSeats) + (p.seats || 0);
+      updates.fcbIncome = Number(gameState.fcbIncome) + (p.income || 0);
+    } else {
+      updates.rmaBudget = Number(gameState.rmaBudget) + (p.money || 0);
+      updates.rmaOvr = Number(gameState.rmaOvr) + (p.ovr || 0);
+      updates.rmaSeats = Number(gameState.rmaSeats) + (p.seats || 0);
+      updates.rmaIncome = Number(gameState.rmaIncome) + (p.income || 0);
+    }
+
+    if (p.playerRaw && p.playerRaw.includes("|")) {
+      const [pos, name, age, ovr, val] = p.playerRaw.split("|");
+      const newPlayer = { pos: pos.trim(), name: name.trim(), age: Number(age), ovr: Number(ovr), val: val.trim() };
+      updates[isFcb ? "fcbExtraPlayers" : "rmaExtraPlayers"] = arrayUnion(newPlayer);
+    }
+
+    await setDoc(doc(db, "system", "state"), updates, { merge: true });
+    await updateDoc(doc(db, "proposals", propId), { executed: true });
+    alert(`⚡ ¡Propuesta ejecutada en ${viewingClub}! Caja, estadio y plantilla actualizados.`);
+  };
+
+  window.deleteProposal = async (id) => {
+    if (!isAdmin) return;
+    await deleteDoc(doc(db, "proposals", id));
+  };
+
+  window.addSingleMarketPlayer = async () => {
+    if (!isAdmin) return;
+    const pos = document.getElementById("mktPos").value;
+    const name = document.getElementById("mktName").value.trim();
+    const age = Number(document.getElementById("mktAge").value) || 23;
+    const ovr = Number(document.getElementById("mktOvr").value) || 85;
+    const price = Number(document.getElementById("mktPrice").value) || 50;
+    if (!name) return alert("Pon el nombre del jugador.");
+
+    await addDoc(collection(db, "market"), { pos, name, age, ovr, price });
+    document.getElementById("mktName").value = "";
+    alert("⚽ Jugador añadido al mercado.");
+  };
+
+  window.importMarketJson = async () => {
+    if (!isAdmin) return;
+    try {
+      const arr = JSON.parse(document.getElementById("mktJsonInput").value.trim());
+      if (!Array.isArray(arr)) return alert("El JSON debe ser una lista [ ... ]");
+      for (const p of arr) {
+        await addDoc(collection(db, "market"), {
+          pos: p.pos || "DEL",
+          name: p.name || "Jugador",
+          age: Number(p.age) || 24,
+          ovr: Number(p.ovr) || 85,
+          price: Number(p.price) || 40
+        });
+      }
+      document.getElementById("mktJsonInput").value = "";
+      alert(`✅ ¡${arr.length} jugadores importados al mercado!`);
+    } catch (e) {
+      alert("Error en el formato JSON: " + e.message);
+    }
+  };
+
+  window.deleteMarketPlayer = async (id) => {
+    if (!isAdmin) return;
+    await deleteDoc(doc(db, "market", id));
+  };
+
+  function renderAdminUsers() {
+    document.getElementById("admUsersList").innerHTML = allUsers.map(u => `
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.8rem;">
+        <div>
+          <strong>${u.club === 'FCB' ? '🔵🔴' : '⚪'} ${escapeHtml(u.nickname)}</strong>
+          <div style="font-size:0.7rem;color:var(--muted);">${escapeHtml(u.email || '')}</div>
+        </div>
+        <button class="btn btn-sm ${u.banned ? 'btn-green' : 'btn-red'}" onclick="toggleBan('${u.uid}', ${!u.banned})">
+          ${u.banned ? 'Desbanear' : '🔨 Banear'}
+        </button>
+      </div>
+    `).join("");
+  }
+
+  window.toggleBan = async (uid, banState) => {
+    if (!isAdmin) return;
+    await updateDoc(doc(db, "users", uid), { banned: banState });
+  };
+
+  window.shareInvite = () => {
+    const team = viewingClub === "FCB" ? "FC Barcelona 🔵🔴" : "Real Madrid ⚪👑";
+    const text = `¡Entra a mi bando del ${team} en EL CLÁSICO 2.0! Votamos fichajes, ampliamos el estadio y competimos 1 partido al día: ${window.location.href}`;
+    if (navigator.share) navigator.share({ title: "El Clásico 2.0", text, url: window.location.href });
+    else { navigator.clipboard.writeText(text); alert("¡Enlace copiado! Compártelo para traer socios a tu bando."); }
+  };
+
+  window.switchVoteSub = (s) => {
+    document.getElementById("subTabProps").classList.toggle("active", s === "props");
+    document.getElementById("subTabRoles").classList.toggle("active", s === "roles");
+    document.getElementById("votePropsPanel").classList.toggle("hidden", s !== "props");
+    document.getElementById("voteRolesPanel").classList.toggle("hidden", s !== "roles");
+  };
+
+  window.switchSquadSub = (s) => {
+    document.getElementById("subTabMySquad").classList.toggle("active", s === "mine");
+    document.getElementById("subTabMarket").classList.toggle("active", s === "market");
+    document.getElementById("mySquadPanel").classList.toggle("hidden", s !== "mine");
+    document.getElementById("marketPanel").classList.toggle("hidden", s !== "market");
+  };
+
+  window.switchAdminTab = (tab, el) => {
+    ["clubs", "props", "market", "users"].forEach(t => document.getElementById("adm-" + t).classList.add("hidden"));
+    document.getElementById("adm-" + tab).classList.remove("hidden");
+    document.querySelectorAll(".adm-tab").forEach(b => b.classList.remove("active"));
+    el.classList.add("active");
   };
 
   window.goTab = (name, btn) => {
