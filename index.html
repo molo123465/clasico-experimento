@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="theme-color" content="#03060d" />
+  <meta name="theme-color" content="#03050c" />
   <title>EL CLÁSICO 2.0 · Barça vs Madrid</title>
   <style>
     :root {
-      --bg: #03060d;
-      --surface: #0a101d;
-      --surface-2: #11192c;
-      --surface-3: #18233d;
-      --border: rgba(255, 255, 255, 0.08);
+      --bg: #03050c;
+      --surface: #0a0f1d;
+      --surface-2: #11182b;
+      --surface-3: #18223b;
+      --border: rgba(255, 255, 255, 0.09);
       --text: #f8fafc;
       --muted: #94a3b8;
       --fcb: linear-gradient(135deg, #a50044 0%, #004d98 100%);
@@ -24,42 +24,37 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
     body {
-      background: radial-gradient(circle at 50% -10%, #162547 0%, var(--bg) 52%);
-      color: var(--text); padding-bottom: 90px; min-height: 100vh; overflow-x: hidden;
+      background: radial-gradient(circle at 50% -15%, #192952 0%, var(--bg) 50%);
+      color: var(--text); padding-bottom: 92px; min-height: 100vh; overflow-x: hidden;
     }
 
-    /* Header & Breaking News Ticker */
+    /* Header & Breaking News */
     header {
       position: sticky; top: 0; z-index: 70;
-      background: rgba(3, 6, 13, 0.9); backdrop-filter: blur(16px);
+      background: rgba(3, 5, 12, 0.92); backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
-    .top-bar {
-      padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;
-    }
+    .top-bar { padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; }
     .brand { font-weight: 900; font-size: 1rem; letter-spacing: -0.4px; display: flex; align-items: center; gap: 7px; }
     .phase-pill {
       display: flex; align-items: center; gap: 5px;
       background: rgba(245, 158, 11, 0.14); color: var(--gold);
       border: 1px solid rgba(245, 158, 11, 0.35);
-      font-size: 0.66rem; font-weight: 900; padding: 4px 9px; border-radius: 999px;
-      text-transform: uppercase;
+      font-size: 0.65rem; font-weight: 900; padding: 4px 9px; border-radius: 999px; text-transform: uppercase;
     }
     .dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); animation: blink 1.4s infinite; }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
 
     .ticker-wrap {
-      background: linear-gradient(90deg, rgba(239,68,68,0.18), rgba(245,158,11,0.18));
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 5px 12px; font-size: 0.72rem; font-weight: 700; color: #fde68a;
+      background: linear-gradient(90deg, rgba(239,68,68,0.2), rgba(245,158,11,0.2));
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 5px 12px; font-size: 0.72rem; font-weight: 700; color: #fef08a;
       display: flex; align-items: center; gap: 8px; overflow: hidden; white-space: nowrap;
     }
-    .ticker-tag { background: var(--red); color: #fff; font-size: 0.6rem; font-weight: 900; padding: 1px 5px; border-radius: 4px; flex-shrink: 0; }
-
+    .ticker-tag { background: var(--red); color: #fff; font-size: 0.58rem; font-weight: 900; padding: 2px 5px; border-radius: 4px; flex-shrink: 0; }
     .btn-god {
       background: linear-gradient(135deg, #f59e0b, #dc2626); color: #fff;
-      border: none; border-radius: 8px; padding: 5px 9px; font-size: 0.7rem;
-      font-weight: 900; cursor: pointer;
+      border: none; border-radius: 8px; padding: 5px 9px; font-size: 0.7rem; font-weight: 900; cursor: pointer;
     }
 
     .container { max-width: 600px; margin: 0 auto; padding: 12px; }
@@ -68,14 +63,14 @@
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 20px; padding: 15px; margin-bottom: 12px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
-    .hero-fcb { background: var(--fcb); border: 1px solid rgba(255, 255, 255, 0.22); }
-    .hero-rma { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid rgba(254, 190, 16, 0.48); }
+    .hero-fcb { background: var(--fcb); border: 1px solid rgba(255, 255, 255, 0.24); }
+    .hero-rma { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1px solid rgba(254, 190, 16, 0.5); }
 
     h2 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.2px; }
-    h3 { font-size: 0.94rem; font-weight: 800; }
-    p { color: var(--muted); font-size: 0.84rem; line-height: 1.42; }
+    h3 { font-size: 0.92rem; font-weight: 800; }
+    p { color: var(--muted); font-size: 0.83rem; line-height: 1.42; }
 
     /* Buttons */
     .btn {
@@ -84,7 +79,7 @@
       display: inline-flex; align-items: center; justify-content: center; gap: 7px;
     }
     .btn:active { transform: scale(0.96); }
-    .btn-google { background: #fff; color: #0f172a; box-shadow: 0 4px 18px rgba(255,255,255,0.16); }
+    .btn-google { background: #fff; color: #0f172a; box-shadow: 0 4px 18px rgba(255,255,255,0.18); }
     .btn-fcb { background: var(--fcb); color: #fff; }
     .btn-rma { background: #fff; color: #0f172a; border: 2px solid #febe10; }
     .btn-green { background: var(--green); color: #022c22; }
@@ -95,75 +90,100 @@
     .btn-sm { padding: 7px 11px; font-size: 0.76rem; width: auto; border-radius: 9px; }
 
     input, select, textarea {
-      width: 100%; background: #050912; border: 1px solid var(--border);
-      color: var(--text); padding: 11px 12px; border-radius: 12px;
-      font-size: 0.88rem; margin-bottom: 9px; outline: none;
+      width: 100%; background: #050811; border: 1px solid var(--border);
+      color: var(--text); padding: 10px 12px; border-radius: 11px;
+      font-size: 0.86rem; margin-bottom: 8px; outline: none;
     }
     input:focus, select:focus, textarea:focus { border-color: var(--gold); }
 
     /* Stats & XP */
     .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
     .stat-tile {
-      background: rgba(3, 6, 13, 0.58); backdrop-filter: blur(8px);
+      background: rgba(3, 5, 12, 0.6); backdrop-filter: blur(8px);
       padding: 10px 11px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.1);
     }
-    .stat-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.72); font-weight: 700; text-transform: uppercase; }
+    .stat-lbl { font-size: 0.67rem; color: rgba(255,255,255,0.72); font-weight: 700; text-transform: uppercase; }
     .stat-num { font-size: 1.06rem; font-weight: 900; margin-top: 2px; }
     .progress { height: 6px; background: rgba(0,0,0,0.45); border-radius: 99px; overflow: hidden; margin-top: 5px; }
     .progress-bar { height: 100%; border-radius: 99px; transition: width 0.35s; }
 
-    /* Daily Check-in */
-    .checkin-box {
-      background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(59,130,246,0.15));
-      border: 1px solid rgba(16,185,129,0.38); border-radius: 16px; padding: 13px;
+    /* Misiones & Check-in */
+    .quest-bar {
+      background: linear-gradient(135deg, rgba(16,185,129,0.14), rgba(59,130,246,0.14));
+      border: 1px solid rgba(16,185,129,0.35); border-radius: 16px; padding: 12px;
       display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px;
     }
 
     /* Bankruptcy Alert */
     .bankruptcy-alert {
-      background: linear-gradient(135deg, rgba(220, 38, 38, 0.28), rgba(127, 29, 29, 0.48));
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.3), rgba(127, 29, 29, 0.5));
       border: 1px solid #ef4444; border-radius: 16px; padding: 13px; margin-bottom: 12px;
       animation: pulseRed 1.5s infinite;
     }
     @keyframes pulseRed { 0%,100% { border-color: #ef4444; } 50% { border-color: #fca5a5; } }
 
-    /* Propuestas & Votos */
+    /* MULTI-OPTION VOTING CARDS (NUEVO SISTEMA PRO) */
     .prop-card {
       background: var(--surface-2); border: 1px solid var(--border);
-      border-radius: 16px; padding: 14px; margin-bottom: 11px; position: relative;
+      border-radius: 18px; padding: 14px; margin-bottom: 13px;
     }
-    .prop-card.unvoted { border-color: rgba(245, 158, 11, 0.45); }
+    .prop-card.unvoted { border-color: rgba(245, 158, 11, 0.5); box-shadow: 0 0 18px rgba(245, 158, 11, 0.08); }
     .tag {
-      font-size: 0.64rem; font-weight: 900; padding: 3px 8px; border-radius: 6px;
+      font-size: 0.63rem; font-weight: 900; padding: 3px 8px; border-radius: 6px;
       text-transform: uppercase; display: inline-block;
     }
     .tag-buy { background: rgba(16, 185, 129, 0.18); color: #34d399; }
     .tag-sell { background: rgba(239, 68, 68, 0.18); color: #f87171; }
     .tag-stadium { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-    .tag-money { background: rgba(245, 158, 11, 0.18); color: #fbbf24; }
-    .tag-crisis { background: rgba(236, 72, 153, 0.22); color: #f472b6; }
-    .tag-done { background: rgba(139, 92, 246, 0.22); color: #c4b5fd; }
+    .tag-dilemma { background: rgba(168, 85, 247, 0.22); color: #d8b4fe; }
+    .tag-crisis { background: rgba(236, 72, 153, 0.24); color: #f472b6; }
+    .tag-done { background: rgba(100, 116, 139, 0.25); color: #cbd5e1; }
 
-    .impact-chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0; }
-    .chip {
-      background: #060a14; border: 1px solid var(--border);
-      padding: 3px 7px; border-radius: 7px; font-size: 0.71rem; font-weight: 800;
+    .opt-box {
+      position: relative; background: #070b15; border: 1.5px solid var(--border);
+      border-radius: 12px; padding: 10px 12px; margin-top: 8px; cursor: pointer;
+      overflow: hidden; transition: 0.15s;
     }
-    .vote-bar { height: 10px; background: #050912; border-radius: 99px; overflow: hidden; display: flex; margin: 8px 0; }
-    .v-yes { background: var(--green); height: 100%; transition: width 0.3s; }
-    .v-no { background: var(--red); height: 100%; transition: width 0.3s; }
+    .opt-box:active { transform: scale(0.985); }
+    .opt-box.selected { border-color: var(--green); background: rgba(16, 185, 129, 0.08); }
+    .opt-fill {
+      position: absolute; top: 0; left: 0; bottom: 0;
+      background: rgba(59, 130, 246, 0.15); z-index: 0; transition: width 0.4s;
+    }
+    .opt-box.selected .opt-fill { background: rgba(16, 185, 129, 0.2); }
+    .opt-content { position: relative; z-index: 1; }
+    .opt-top { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 800; }
+    .opt-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+    .chip {
+      background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.08);
+      padding: 2px 6px; border-radius: 5px; font-size: 0.68rem; font-weight: 800;
+    }
 
-    /* Market */
-    .market-item {
+    /* CANDIDATURAS DETALLADAS Y LEGIBLES */
+    .cand-card {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 14px; margin-bottom: 11px;
+    }
+    .cand-manifesto {
+      background: #060a14; border: 1px solid var(--border); border-radius: 11px;
+      padding: 10px; margin: 8px 0; font-size: 0.8rem; color: #cbd5e1; line-height: 1.45;
+    }
+    .cand-manifesto div { margin-bottom: 5px; }
+    .cand-manifesto div:last-child { margin-bottom: 0; }
+
+    /* FUT CARDS SQUAD */
+    .player-card {
       display: flex; justify-content: space-between; align-items: center;
       background: var(--surface-2); border: 1px solid var(--border);
-      border-radius: 14px; padding: 11px; margin-bottom: 8px;
+      border-radius: 14px; padding: 10px 12px; margin-bottom: 8px;
     }
     .ovr-badge {
-      width: 38px; height: 38px; border-radius: 10px; font-weight: 900; font-size: 0.92rem;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, #f59e0b, #b45309); color: #fff; flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 11px; font-weight: 900; font-size: 0.95rem;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      line-height: 1; flex-shrink: 0;
     }
+    .ovr-elite { background: linear-gradient(135deg, #f59e0b, #b45309); color: #fff; box-shadow: 0 0 12px rgba(245,158,11,0.35); }
+    .ovr-gold { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; }
 
     /* Chat Bunker */
     .chat-box {
@@ -203,7 +223,7 @@
 
     nav.bottom-nav {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
-      background: rgba(3, 6, 13, 0.96); backdrop-filter: blur(14px);
+      background: rgba(3, 5, 12, 0.96); backdrop-filter: blur(14px);
       border-top: 1px solid var(--border);
       display: grid; grid-template-columns: repeat(5, 1fr); padding: 7px 0 11px;
     }
@@ -221,18 +241,18 @@
     }
 
     .hidden { display: none !important; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-    th, td { padding: 8px 5px; text-align: left; border-bottom: 1px solid var(--border); }
-    th { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; }
     .scoreboard {
       background: linear-gradient(180deg, #131d33 0%, #090e1a 100%);
       border: 1px solid var(--border); border-radius: 18px; padding: 15px; text-align: center;
     }
     .score-row { display: flex; justify-content: space-between; align-items: center; margin: 11px 0; }
     .score-digits {
-      font-size: 1.8rem; font-weight: 900; background: #03060d;
+      font-size: 1.8rem; font-weight: 900; background: #03050c;
       padding: 6px 15px; border-radius: 12px; border: 1px solid var(--border); letter-spacing: 2px;
     }
+    table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    th, td { padding: 8px 5px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; }
   </style>
 </head>
 <body>
@@ -269,7 +289,7 @@
       <div><div style="font-size:2.5rem;">⚪👑</div><strong>Real Madrid</strong></div>
     </div>
     <h2 style="font-size:1.3rem;">¿Qué club llegará más lejos?</h2>
-    <p style="margin-top:7px;">Mismo dinero, mismo estadio, <strong>1 partido por día</strong>. Votad fichajes, ampliad el estadio, subid de nivel como socios y evitad caer en bancarrota.</p>
+    <p style="margin-top:7px;">Mismo dinero, mismo estadio, <strong>1 partido por día</strong>. Decidid entre opciones reales, leed programas electorales, subid de nivel y evitad la quiebra.</p>
     <button class="btn btn-google" style="margin-top:16px;" onclick="loginWithGoogle()">
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="18" alt="G" />
       Entrar con Google para jugar
@@ -316,22 +336,19 @@
 
   <!-- TAB 1: MI CLUB -->
   <section id="tab-club" class="container">
-    <!-- CHECK-IN DIARIO (RETENCIÓN) -->
-    <div class="checkin-box" id="dailyCheckinCard">
+    <div class="quest-bar">
       <div>
-        <strong style="font-size:0.86rem;color:#6ee7b7;">🎁 Recompensa Diaria de Socio</strong>
-        <p style="font-size:0.75rem;color:#cbd5e1;" id="streakText">Racha: 1 día · Reclama +100 XP y +0.5M € para tu club</p>
+        <strong style="font-size:0.84rem;color:#6ee7b7;">🎁 Recompensa Diaria + Apoyo al Club</strong>
+        <p style="font-size:0.73rem;color:#cbd5e1;" id="streakText">Racha: 1d · Reclama +100 XP y +0.5M € para tu club</p>
       </div>
       <button class="btn btn-green btn-sm" id="claimDailyBtn" onclick="claimDailyReward()">Reclamar</button>
     </div>
 
-    <!-- ALERTA BANCARROTA -->
     <div id="bankruptcyBox" class="bankruptcy-alert hidden">
-      <strong style="color:#fca5a5;font-size:0.9rem;">🚨 ¡PELIGRO DE BANCARROTA!</strong>
+      <strong style="color:#fca5a5;font-size:0.9rem;">🚨 ¡ALERTA DE BANCARROTA!</strong>
       <p style="color:#fecaca;font-size:0.78rem;margin-top:3px;" id="bankruptcyText"></p>
     </div>
 
-    <!-- TARJETA PRINCIPAL DEL CLUB -->
     <div class="card" id="heroClubCard">
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <div>
@@ -366,51 +383,62 @@
       </div>
     </div>
 
-    <!-- RECLUTAMIENTO -->
     <div class="card" style="border-color:rgba(245,158,11,0.35);">
       <h2>📣 Suma fuerzas (<span id="statMembers">1</span> socios en tu bando)</h2>
       <p style="margin-bottom:9px;">Cuantos más socios se unan a tu club, más fuerza tenéis en las votaciones y más abonos vendéis.</p>
       <button class="btn btn-gold" onclick="shareInvite()">📲 Invitar gente a mi club</button>
     </div>
 
-    <!-- DIRECTIVA -->
     <div class="card">
-      <h2>🏛️ Directiva del Club</h2>
+      <h2>🏛️ Directiva Actual del Club</h2>
       <div id="rolesBoard"></div>
     </div>
   </section>
 
-  <!-- TAB 2: VOTACIONES Y CARGOS -->
+  <!-- TAB 2: VOTACIONES MULTI-OPCIÓN Y CANDIDATURAS -->
   <section id="tab-vote" class="container hidden">
     <div class="sub-tabs">
-      <div class="sub-tab active" id="subTabProps" onclick="switchVoteSub('props')">🗳️ Propuestas (<span id="unvotedCount">0</span>)</div>
-      <div class="sub-tab" id="subTabRoles" onclick="switchVoteSub('roles')">👔 Elección Cargos</div>
+      <div class="sub-tab active" id="subTabProps" onclick="switchVoteSub('props')">🗳️ Decisiones (<span id="unvotedCount">0</span>)</div>
+      <div class="sub-tab" id="subTabRoles" onclick="switchVoteSub('roles')">👔 Candidaturas</div>
     </div>
 
     <div id="votePropsPanel">
       <div class="card">
-        <h2>📋 Decisiones del Club</h2>
-        <p style="margin-bottom:11px;">Cada voto te da <strong>+25 XP</strong>. Si la mayoría aprueba una operación, se ejecutará aunque el club entre en deuda.</p>
-        <div id="proposalsList">Cargando propuestas...</div>
+        <h2>📋 Urnas de Decisiones del Club</h2>
+        <p style="margin-bottom:11px;">Elige la opción que mejor venga al club. Cada voto suma <strong>+30 XP</strong>. ¡Cuidado con endeudar al equipo!</p>
+        <div id="proposalsList">Cargando decisiones...</div>
       </div>
     </div>
 
     <div id="voteRolesPanel" class="hidden">
       <div class="card">
-        <h2>📢 Preséntate a un Cargo</h2>
+        <h2>📢 Presentar Manifiesto Electoral</h2>
+        <p style="margin-bottom:9px;">Redacta tu programa completo para que los socios lo lean antes de votarte:</p>
         <select id="roleSelect">
-          <option value="Presidente/a">👔 Presidente/a</option>
-          <option value="Entrenador/a">📋 Entrenador/a</option>
-          <option value="Director/a Deportivo/a">💼 Director/a Deportivo/a</option>
-          <option value="Director/a de Cantera">🌱 Director/a de Cantera</option>
-          <option value="Capitán/a">📣 Capitán/a</option>
+          <option value="Presidente/a">👔 Presidente/a (Control económico y estrategia)</option>
+          <option value="Entrenador/a">📋 Entrenador/a (Táctica, estilo y titulares)</option>
+          <option value="Director/a Deportivo/a">💼 Director/a Deportivo/a (Fichajes y ventas)</option>
+          <option value="Director/a de Cantera">🌱 Director/a de Cantera (Promesas y filial)</option>
+          <option value="Capitán/a">📣 Capitán/a (Liderazgo en el vestuario)</option>
         </select>
-        <input type="text" id="sloganInput" placeholder="Tu eslogan electoral..." maxlength="65" />
-        <textarea id="programInput" rows="2" placeholder="Tus promesas si ganas..." maxlength="180"></textarea>
-        <button class="btn btn-green" onclick="createCandidate()">🚀 Publicar Candidatura</button>
+        <input type="text" id="sloganInput" placeholder="Eslogan de campaña (ej. ¡Triplete y cero deudas!)" maxlength="70" />
+        <textarea id="planMoneyInput" rows="2" placeholder="💰 Plan Económico (¿Qué harás con el dinero y el estadio?)..." maxlength="240"></textarea>
+        <textarea id="planSportInput" rows="2" placeholder="⚽ Plan Deportivo (¿A quién ficharías, venderías y cómo jugarías?)..." maxlength="240"></textarea>
+        <button class="btn btn-green" onclick="createCandidate()">🚀 Publicar Mi Candidatura</button>
       </div>
+
       <div class="card">
-        <h2>🗳️ Candidatos del Club</h2>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <h2>🗳️ Programas y Candidatos</h2>
+          <select id="filterRoleCand" onchange="renderCandidates()" style="width:auto;margin:0;padding:5px 8px;font-size:0.75rem;">
+            <option value="ALL">Todos los cargos</option>
+            <option value="Presidente/a">Presidente/a</option>
+            <option value="Entrenador/a">Entrenador/a</option>
+            <option value="Director/a Deportivo/a">Dir. Deportivo</option>
+            <option value="Director/a de Cantera">Dir. Cantera</option>
+            <option value="Capitán/a">Capitán/a</option>
+          </select>
+        </div>
         <div id="candidatesContainer">Cargando...</div>
       </div>
     </div>
@@ -420,7 +448,7 @@
   <section id="tab-chat" class="container hidden">
     <div class="card" style="padding:10px 13px;margin-bottom:9px;border-color:rgba(16,185,129,0.35);">
       <div style="font-size:0.8rem;font-weight:800;color:#34d399;">🔒 VESTUARIO PRIVADO · INCOMUNICACIÓN TOTAL</div>
-      <p style="font-size:0.74rem;margin-top:2px;">Solo socios de tu bando. Debatid qué votar y reaccionad a los mensajes.</p>
+      <p style="font-size:0.74rem;margin-top:2px;">Solo socios de tu bando. Debatid las opciones y apoyad candidaturas.</p>
     </div>
     <div class="chat-box" id="chatBox"></div>
     <div class="chat-input-row">
@@ -438,15 +466,12 @@
 
     <div id="mySquadPanel" class="card">
       <h2 id="squadTitle">📋 Plantilla Oficial</h2>
-      <table>
-        <thead><tr><th>Pos</th><th>Jugador</th><th>Edad</th><th>GRL</th><th>Valor</th></tr></thead>
-        <tbody id="squadBody"></tbody>
-      </table>
+      <div id="squadCardsList"></div>
     </div>
 
     <div id="marketPanel" class="card hidden">
       <h2>🛒 Mercado Internacional</h2>
-      <p style="margin-bottom:10px;">Jugadores disponibles en el mercado. Pide en el Vestuario a quién quieres fichar.</p>
+      <p style="margin-bottom:10px;">Jugadores disponibles en el mercado. Debatid en el Vestuario a quién fichar.</p>
       <div id="marketList">Cargando mercado...</div>
     </div>
   </section>
@@ -512,28 +537,20 @@
 
       <div class="admin-tabs">
         <div class="adm-tab active" onclick="switchAdminTab('clubs', this)">🏟️ Clubes</div>
-        <div class="adm-tab" onclick="switchAdminTab('props', this)">🗳️ 100 Props</div>
+        <div class="adm-tab" onclick="switchAdminTab('props', this)">🗳️ Decisiones</div>
         <div class="adm-tab" onclick="switchAdminTab('market', this)">🛒 Mercado</div>
         <div class="adm-tab" onclick="switchAdminTab('users', this)">🔨 Usuarios</div>
       </div>
 
-      <!-- ADMIN 1: CLUBES, TICKER Y PARTIDOS -->
+      <!-- ADMIN 1: CLUBES -->
       <div id="adm-clubs">
-        <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">📢 Noticia Última Hora (Ticker superior):</label>
-        <input type="text" id="admTicker" placeholder="Ej. ¡BOMBAZO! El Barça vota fichar a Mbappé..." />
-
+        <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">📢 Noticia Última Hora (Ticker):</label>
+        <input type="text" id="admTicker" />
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-          <div>
-            <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Fase / Jornada:</label>
-            <input type="text" id="admPhase" placeholder="JORNADA 1" />
-          </div>
-          <div>
-            <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Marcador:</label>
-            <input type="text" id="admScore" placeholder="2 - 1" />
-          </div>
+          <div><label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Fase:</label><input type="text" id="admPhase" /></div>
+          <div><label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Marcador:</label><input type="text" id="admScore" /></div>
         </div>
-
-        <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Crónica del Partido:</label>
+        <label style="font-size:0.74rem;color:var(--gold);font-weight:800;">Crónica:</label>
         <textarea id="admSummary" rows="2"></textarea>
 
         <h3 style="margin:8px 0 5px;color:#fb7185;">🔵🔴 FC Barcelona</h3>
@@ -559,45 +576,75 @@
           <div><small>€/Part (M):</small><input type="number" step="0.1" id="admRmaIncome" /></div>
           <div><small>Pts Liga:</small><input type="number" id="admRmaPts" /></div>
         </div>
-
         <button class="btn btn-green" style="margin-top:6px;" onclick="saveAllClubStats()">💾 Guardar Todo en Vivo</button>
       </div>
 
-      <!-- ADMIN 2: BIBLIOTECA DE 100 PROPUESTAS + CREADOR -->
+      <!-- ADMIN 2: CREADOR DE DECISIONES MULTI-OPCIÓN + 100 PLANTILLAS -->
       <div id="adm-props" class="hidden">
-        <div style="background:var(--surface-2);padding:11px;border-radius:12px;border:1px solid var(--gold);margin-bottom:12px;">
-          <h3 style="color:var(--gold);margin-bottom:6px;">📚 Biblioteca de 100 Propuestas Listas</h3>
-          <input type="text" id="presetSearch" placeholder="🔍 Buscar entre las 100 ideas (ej. Mbappé, estadio, venta, jeque)..." onkeyup="filterPresets()" />
+        <div style="background:var(--surface-2);padding:10px;border-radius:12px;border:1px solid var(--gold);margin-bottom:10px;">
+          <h3 style="color:var(--gold);margin-bottom:5px;">📚 Biblioteca de 100 Escenarios Listos</h3>
+          <input type="text" id="presetSearch" placeholder="🔍 Buscar escenario (Mbappé, dilema, estadio, venta, crisis)..." onkeyup="filterPresets()" />
           <select id="presetSelect" onchange="applyPreset()"></select>
         </div>
 
-        <h3>🚀 Configurar y Lanzar Propuesta</h3>
+        <h3>🚀 Crear Decisión Multi-Opción (A vs B vs C)</h3>
         <select id="admPropClub">
-          <option value="FCB">🔵🔴 Solo para FC Barcelona</option>
-          <option value="RMA">⚪👑 Solo para Real Madrid</option>
-          <option value="BOTH">⚔️ Para AMBOS clubes a la vez</option>
+          <option value="FCB">🔵🔴 Solo FC Barcelona</option>
+          <option value="RMA">⚪👑 Solo Real Madrid</option>
+          <option value="BOTH">⚔️ AMBOS Clubes</option>
         </select>
         <select id="admPropType">
-          <option value="BUY">🟢 Fichaje de Jugador</option>
-          <option value="SELL">🔴 Venta de Jugador</option>
-          <option value="STADIUM">🏟️ Mejora de Estadio / Ingresos</option>
-          <option value="MONEY">💰 Operación Económica / Patrocinio</option>
-          <option value="CRISIS">🚨 Crisis / Evento Especial</option>
+          <option value="DILEMMA">🔀 Dilema Estratégico (A vs B vs C)</option>
+          <option value="BUY">🟢 Operación de Fichaje</option>
+          <option value="SELL">🔴 Operación de Venta</option>
+          <option value="STADIUM">🏟️ Estadio e Infraestructura</option>
+          <option value="CRISIS">🚨 Crisis / Evento Urgente</option>
         </select>
-        <input type="text" id="admPropTitle" placeholder="Título de la propuesta..." />
-        <textarea id="admPropDesc" rows="2" placeholder="Descripción y consecuencias..."></textarea>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-          <input type="number" step="0.5" id="admPropMoney" placeholder="Caja M€ (ej. -200)" />
-          <input type="number" id="admPropOvr" placeholder="GRL (ej. +4)" />
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
-          <input type="number" id="admPropSeats" placeholder="Asientos (ej. +10000)" />
-          <input type="number" step="0.1" id="admPropIncome" placeholder="€/Part (ej. +1.5)" />
-        </div>
-        <input type="text" id="admPropPlayer" placeholder="Opcional jugador: POS|Nombre|Edad|GRL|Valor" />
-        <button class="btn btn-gold" onclick="adminCreateProposal()">🚀 Publicar Propuesta Oficial</button>
+        <input type="text" id="admPropTitle" placeholder="Pregunta o Título (ej. ¿Qué hacemos con los 100M € iniciales?)" />
+        <textarea id="admPropDesc" rows="2" placeholder="Contexto de la decisión..."></textarea>
 
-        <h3 style="margin:14px 0 8px;">⚡ Propuestas Activas</h3>
+        <!-- OPCIÓN A -->
+        <div style="background:#060a14;padding:9px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;">
+          <strong style="font-size:0.78rem;color:#34d399;">Opción A (Obligatoria):</strong>
+          <input type="text" id="optAText" placeholder="Texto Opción A (ej. Fichar a Mbappé por 200M €)" style="margin-top:4px;" />
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+            <input type="number" step="0.5" id="optAMoney" placeholder="M€ (-200)" />
+            <input type="number" id="optAOvr" placeholder="GRL (+4)" />
+            <input type="number" id="optASeats" placeholder="Asientos" />
+            <input type="number" step="0.1" id="optAIncome" placeholder="€/Part" />
+          </div>
+          <input type="text" id="optAPlayer" placeholder="Opcional jugador: DEL|Mbappé|26|91|200M €" style="margin-bottom:0;" />
+        </div>
+
+        <!-- OPCIÓN B -->
+        <div style="background:#060a14;padding:9px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;">
+          <strong style="font-size:0.78rem;color:#60a5fa;">Opción B (Obligatoria):</strong>
+          <input type="text" id="optBText" placeholder="Texto Opción B (ej. Ampliar estadio +20.000 asientos)" style="margin-top:4px;" />
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+            <input type="number" step="0.5" id="optBMoney" placeholder="M€ (-30)" />
+            <input type="number" id="optBOvr" placeholder="GRL (0)" />
+            <input type="number" id="optBSeats" placeholder="Asientos" />
+            <input type="number" step="0.1" id="optBIncome" placeholder="€/Part" />
+          </div>
+          <input type="text" id="optBPlayer" placeholder="Opcional jugador: POS|Nombre|Edad|GRL|Valor" style="margin-bottom:0;" />
+        </div>
+
+        <!-- OPCIÓN C (OPCIONAL) -->
+        <div style="background:#060a14;padding:9px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;">
+          <strong style="font-size:0.78rem;color:#fbbf24;">Opción C (Opcional):</strong>
+          <input type="text" id="optCText" placeholder="Dejar vacío si solo hay A y B" style="margin-top:4px;" />
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+            <input type="number" step="0.5" id="optCMoney" placeholder="M€" />
+            <input type="number" id="optCOvr" placeholder="GRL" />
+            <input type="number" id="optCSeats" placeholder="Asientos" />
+            <input type="number" step="0.1" id="optCIncome" placeholder="€/Part" />
+          </div>
+          <input type="text" id="optCPlayer" placeholder="Opcional jugador" style="margin-bottom:0;" />
+        </div>
+
+        <button class="btn btn-gold" onclick="adminCreateMultiProposal()">🚀 Lanzar Votación al Club</button>
+
+        <h3 style="margin:14px 0 8px;">⚡ Votaciones Activas (Ejecutar Ganadora)</h3>
         <div id="admPropsList"></div>
       </div>
 
@@ -662,117 +709,102 @@
   const ADMIN_EMAIL = "ishaktopro@gmail.com";
 
   // =========================================================================
-  // BIBLIOTECA DE 100 PROPUESTAS REALES LISTAS PARA USAR EN 1 CLIC
+  // 100 ESCENARIOS DE DECISIÓN MULTI-OPCIÓN (A vs B vs C)
   // =========================================================================
-  const PROPOSAL_PRESETS = [
-    // FICHAJES ESTRELLA (1-25)
-    { t:"BUY", title:"Fichar a Kylian Mbappé por 200M €", desc:"Bombarzo mundial. Os endeudáis si no tenéis caja, pero sube muchísimo el ataque.", m:-200, o:4, s:0, i:0.8, p:"DEL|Kylian Mbappé|26|91|200M €" },
-    { t:"BUY", title:"Fichar a Erling Haaland por 190M €", desc:"El cyborg del gol llega al equipo. Riesgo financiero alto.", m:-190, o:4, s:0, i:0.7, p:"DEL|Erling Haaland|24|91|190M €" },
-    { t:"BUY", title:"Fichar a Nico Williams por 58M €", desc:"Cláusula pagada al contado. Velocidad pura por banda.", m:-58, o:2, s:0, i:0.2, p:"DEL|Nico Williams|22|85|58M €" },
-    { t:"BUY", title:"Fichar a Florian Wirtz por 130M €", desc:"Magia pura para el mediocampo ofensivo.", m:-130, o:3, s:0, i:0.4, p:"MED|Florian Wirtz|22|89|130M €" },
-    { t:"BUY", title:"Fichar a Jamal Musiala por 135M €", desc:"Talento generacional para dominar la próxima década.", m:-135, o:3, s:0, i:0.4, p:"MED|Jamal Musiala|22|88|135M €" },
-    { t:"BUY", title:"Fichar a Rodri Hernández por 120M €", desc:"Balón de Oro para controlar todos los partidos.", m:-120, o:4, s:0, i:0.3, p:"MED|Rodri|28|91|120M €" },
-    { t:"BUY", title:"Fichar a William Saliba por 85M €", desc:"Un muro infranqueable para la defensa.", m:-85, o:3, s:0, i:0.1, p:"DEF|William Saliba|24|87|85M €" },
-    { t:"BUY", title:"Fichar a Alphonso Davies libre (Prima 25M €)", desc:"Llega gratis pero pide 25M € de prima de fichaje.", m:-25, o:2, s:0, i:0.2, p:"DEF|Alphonso Davies|24|84|50M €" },
-    { t:"BUY", title:"Fichar a Trent Alexander-Arnold (Prima 30M €)", desc:"Guante en el pie derecho para asistir.", m:-30, o:2, s:0, i:0.2, p:"DEF|Alexander-Arnold|26|86|70M €" },
-    { t:"BUY", title:"Fichar a Julián Álvarez por 90M €", desc:"Garra, presión y goles en partidos grandes.", m:-90, o:2, s:0, i:0.3, p:"DEL|Julián Álvarez|25|86|90M €" },
-    { t:"BUY", title:"Fichar a Rafael Leão por 85M €", desc:"Desborde imparable en el uno contra uno.", m:-85, o:2, s:0, i:0.2, p:"DEL|Rafael Leão|25|86|85M €" },
-    { t:"BUY", title:"Fichar a Alexander Isak por 95M €", desc:"Delantero completo y letal al espacio.", m:-95, o:2, s:0, i:0.2, p:"DEL|Alexander Isak|25|86|95M €" },
-    { t:"BUY", title:"Fichar a Cole Palmer por 110M €", desc:"Sangre fría y goles desde segunda línea.", m:-110, o:3, s:0, i:0.3, p:"MED|Cole Palmer|22|86|110M €" },
-    { t:"BUY", title:"Fichar a Theo Hernández por 60M €", desc:"Potencia física por el lateral izquierdo.", m:-60, o:2, s:0, i:0.1, p:"DEF|Theo Hernández|27|86|60M €" },
-    { t:"BUY", title:"Fichar a Joško Gvardiol por 80M €", desc:"Central zurdo de máximo nivel.", m:-80, o:2, s:0, i:0.1, p:"DEF|Joško Gvardiol|23|85|80M €" },
-    { t:"BUY", title:"Fichar a Martin Ødegaard por 105M €", desc:"Capitán y brújula en el centro del campo.", m:-105, o:3, s:0, i:0.2, p:"MED|Martin Ødegaard|26|88|105M €" },
-    { t:"BUY", title:"Fichar a Bukayo Saka por 130M €", desc:"Extremo eléctrico y regular.", m:-130, o:3, s:0, i:0.4, p:"DEL|Bukayo Saka|23|88|130M €" },
-    { t:"BUY", title:"Fichar a Lautaro Martínez por 100M €", desc:"Goleador nato y líder en el área.", m:-100, o:3, s:0, i:0.3, p:"DEL|Lautaro Martínez|27|88|100M €" },
-    { t:"BUY", title:"Fichar a Alessandro Bastoni por 75M €", desc:"Salida de balón limpia desde atrás.", m:-75, o:2, s:0, i:0.1, p:"DEF|Alessandro Bastoni|25|87|75M €" },
-    { t:"BUY", title:"Fichar a Gianluigi Donnarumma por 50M €", desc:"Portero gigante para salvar puntos.", m:-50, o:2, s:0, i:0.1, p:"POR|G. Donnarumma|26|88|50M €" },
-    { t:"BUY", title:"Fichar a Khvicha Kvaratskhelia por 80M €", desc:"Regate impredecible por banda.", m:-80, o:2, s:0, i:0.2, p:"DEL|Kvaratskhelia|24|86|80M €" },
-    { t:"BUY", title:"Fichar a Bruno Guimarães por 75M €", desc:"Equilibrio y carácter en la medular.", m:-75, o:2, s:0, i:0.1, p:"MED|Bruno Guimarães|27|85|75M €" },
-    { t:"BUY", title:"Fichar a Jeremie Frimpong por 45M €", desc:"Carrilero ofensivo muy barato para su nivel.", m:-45, o:2, s:0, i:0.1, p:"DEF|Jeremie Frimpong|24|84|45M €" },
-    { t:"BUY", title:"Fichar a Viktor Gyökeres por 75M €", desc:"Máquina de hacer goles en Europa.", m:-75, o:2, s:0, i:0.2, p:"DEL|Viktor Gyökeres|26|85|75M €" },
-    { t:"BUY", title:"Fichar a Estevão Willian por 45M €", desc:"Perla brasileña de 17 años con futuro brutal.", m:-45, o:1, s:0, i:0.2, p:"DEL|Estevão Willian|17|80|45M €" },
-
-    // VENTAS Y SALIDAS PARA HACER CAJA (26-50)
-    { t:"SELL", title:"Vender estrella a Arabia Saudí por 130M €", desc:"Pierdes nivel deportivo (-3 GRL), pero salvas las cuentas del club.", m:130, o:-3, s:0, i:-0.3, p:"" },
-    { t:"SELL", title:"Vender titular al PSG por 95M €", desc:"Oferta irrechazable de París. Entra dinero fresco ya.", m:95, o:-2, s:0, i:-0.2, p:"" },
-    { t:"SELL", title:"Vender jugador de rotación a la Premier por 45M €", desc:"Buena venta de fondo de armario sin tocar el 11.", m:45, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender canterano promesa por 35M €", desc:"La afición se enfada un poco, pero ayuda a evitar bancarrota.", m:35, o:-1, s:0, i:-0.1, p:"" },
-    { t:"SELL", title:"Operación Salida: vender 3 descartes por 50M €", desc:"Limpieza de vestuario y ahorro de fichas.", m:50, o:-1, s:0, i:0.1, p:"" },
-    { t:"SELL", title:"Traspaso exprés al Chelsea por 70M €", desc:"Dinero inmediato para tapar agujeros económicos.", m:70, o:-2, s:0, i:-0.1, p:"" },
-    { t:"SELL", title:"Vender veterano a la MLS por 18M €", desc:"Se va una leyenda y libera masa salarial.", m:18, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Ceder 2 jóvenes con opción de compra (15M €)", desc:"Ingreso rápido manteniendo parte de control.", m:15, o:0, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender central titular al Bayern por 65M €", desc:"Gran ingreso económico a cambio de debilitar la defensa.", m:65, o:-2, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender extremo suplente por 28M €", desc:"Venta inteligente en el mercado.", m:28, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Oferta locura de 150M € por vuestro jugador franquicia", desc:"Si aceptáis, nadáis en oro pero perdéis a vuestro ídolo.", m:150, o:-4, s:0, i:-0.5, p:"" },
-    { t:"SELL", title:"Vender mediocentro al Manchester City por 80M €", desc:"Pep Guardiola lo quiere ya.", m:80, o:-2, s:0, i:-0.1, p:"" },
-    { t:"SELL", title:"Vender portero suplente por 12M €", desc:"Dinero limpio sin afectar al equipo titular.", m:12, o:0, s:0, i:0, p:"" },
-    { t:"SELL", title:"Venta urgente por deuda: malvender jugador por 22M €", desc:"Los clubes saben que tenéis prisa y pagan menos.", m:22, o:-2, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender lateral titular por 40M €", desc:"Equilibra el presupuesto semanal.", m:40, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender delantero al Arsenal por 75M €", desc:"Buena cifra para reinvertir en el estadio.", m:75, o:-2, s:0, i:-0.1, p:"" },
-    { t:"SELL", title:"Traspaso al Inter de Milán por 32M €", desc:"Ingreso moderado y seguro.", m:32, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender derechos de 2 canteranos por 20M €", desc:"Dinero rápido a cambio de futuro.", m:20, o:0, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender atacante al Liverpool por 85M €", desc:"Operación millonaria para sanear la caja.", m:85, o:-2, s:0, i:-0.2, p:"" },
-    { t:"SELL", title:"Vender centrocampista al Atlético por 48M €", desc:"Refuerzas a un rival de liga a cambio de 48M €.", m:48, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Liquidación de plantilla: vender 2 titulares por 110M €", desc:"Golpe duro deportivo (-3 GRL) pero salva la bancarrota.", m:110, o:-3, s:0, i:-0.2, p:"" },
-    { t:"SELL", title:"Vender delantero suplente al Tottenham por 38M €", desc:"Gran negocio por un jugador de banquillo.", m:38, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender defensa al Newcastle por 52M €", desc:"El dinero inglés rescata vuestra tesorería.", m:52, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Vender extremo al Dortmund por 30M €", desc:"Caja directa sin tocar la columna vertebral.", m:30, o:-1, s:0, i:0, p:"" },
-    { t:"SELL", title:"Subasta pública de 1 titular (60M €)", desc:"Sale al mejor postor de Europa.", m:60, o:-2, s:0, i:0, p:"" },
-
-    // ESTADIO E INFRAESTRUCTURAS (51-75)
-    { t:"STADIUM", title:"Ampliar tercer anfiteatro (+15.000 asientos) por 25M €", desc:"Cuesta 25M € hoy, pero subís aforo y facturáis +1.2M € extra cada partido.", m:-25, o:0, s:15000, i:1.2, p:"" },
-    { t:"STADIUM", title:"Construir Palcos VIP de lujo por 15M €", desc:"Aumenta +1.5M € la facturación por partido gracias a empresas.", m:-15, o:0, s:2000, i:1.5, p:"" },
-    { t:"STADIUM", title:"Poner techo retráctil y césped de última generación (30M €)", desc:"Convierte el estadio en top mundial (+1.8M €/partido).", m:-30, o:1, s:5000, i:1.8, p:"" },
-    { t:"STADIUM", title:"Gastar 10M € en mejorar gradas y accesos", desc:"Sube +8.000 asientos y +0.7M € por partido.", m:-10, o:0, s:8000, i:0.7, p:"" },
-    { t:"STADIUM", title:"Abrir Museo Interactivo y Megastore del Club (12M €)", desc:"Ingresos pasivos garantizados (+0.9M € por partido).", m:-12, o:0, s:0, i:0.9, p:"" },
-    { t:"STADIUM", title:"Modernizar la Ciudad Deportiva y gimnasio (18M €)", desc:"Mejora el rendimiento físico del equipo (+1 GRL).", m:-18, o:1, s:0, i:0.2, p:"" },
-    { t:"STADIUM", title:"Invertir 20M € en la Academia / Cantera", desc:"Sube el nivel de los jóvenes (+2 GRL) y futuros ingresos.", m:-20, o:2, s:0, i:0.3, p:"" },
-    { t:"STADIUM", title:"Crear Grada de Animación ultra (+5.000 asientos) por 6M €", desc:"El estadio aprieta más y suma +0.5M € por partido.", m:-6, o:1, s:5000, i:0.5, p:"" },
-    { t:"STADIUM", title:"Vender el 'Naming' (apellido) del Estadio por 65M €", desc:"Recibís 65M € ya mismo a cambio de poner nombre de marca al estadio.", m:65, o:0, s:0, i:-0.2, p:"" },
-    { t:"STADIUM", title:"Ampliación histórica (+25.000 asientos) por 45M €", desc:"El estadio más grande del país: +2.4M € extra cada jornada.", m:-45, o:0, s:25000, i:2.4, p:"" },
-    { t:"STADIUM", title:"Instalar videomarcador 360º (14M €)", desc:"Espectáculo brutal en cada partido (+0.8M €/partido).", m:-14, o:0, s:0, i:0.8, p:"" },
-    { t:"STADIUM", title:"Construir Hotel y Zona Fan junto al estadio (22M €)", desc:"Genera +1.4M € cada día de partido.", m:-22, o:0, s:1000, i:1.4, p:"" },
-    { t:"STADIUM", title:"Subir precio de abonos un 25%", desc:"Facturáis +1.0M € más por partido sin gastar nada.", m:0, o:0, s:0, i:1.0, p:"" },
-    { t:"STADIUM", title:"Bajar entradas a mitad de precio para llenar el campo", desc:"Ganáis menos por partido (-0.6M €), pero el equipo vuela (+1 GRL).", m:0, o:1, s:0, i:-0.6, p:"" },
-    { t:"STADIUM", title:"Reformar vestuarios y sala médica con IA (10M €)", desc:"Reduce lesiones y mejora el rendimiento (+1 GRL).", m:-10, o:1, s:0, i:0.1, p:"" },
-    { t:"STADIUM", title:"Ampliar fondo norte (+10.000 asientos) por 16M €", desc:"Inversión rentable a medio plazo (+0.9M €/partido).", m:-16, o:0, s:10000, i:0.9, p:"" },
-    { t:"STADIUM", title:"Crear Tour Virtual y Experiencias VIP (8M €)", desc:"Suma +0.6M € extra por partido.", m:-8, o:0, s:0, i:0.6, p:"" },
-    { t:"STADIUM", title:"Instalar placas solares en el estadio (9M €)", desc:"Ahorra costes y suma +0.5M € limpios por jornada.", m:-9, o:0, s:0, i:0.5, p:"" },
-    { t:"STADIUM", title:"Construir residencia para jóvenes talentos (15M €)", desc:"Sube +1 GRL la plantilla con promesas.", m:-15, o:1, s:0, i:0.2, p:"" },
-    { t:"STADIUM", title:"Ampliar zona de prensa y televisión (7M €)", desc:"Mejora contratos audiovisuales (+0.5M €/partido).", m:-7, o:0, s:0, i:0.5, p:"" },
-    { t:"STADIUM", title:"Crear restaurante panorámico dentro del campo (11M €)", desc:"Ingresos VIP constantes (+0.8M €/partido).", m:-11, o:0, s:500, i:0.8, p:"" },
-    { t:"STADIUM", title:"Poner césped híbrido perfecto (5M €)", desc:"Mejora el juego rápido (+1 GRL).", m:-5, o:1, s:0, i:0, p:"" },
-    { t:"STADIUM", title:"Ampliar parking y metro directo (13M €)", desc:"Facilita llenos absolutos (+0.7M €/partido).", m:-13, o:0, s:3000, i:0.7, p:"" },
-    { t:"STADIUM", title:"Construir museo de trofeos en el centro de la ciudad (10M €)", desc:"Turismo futbolero a tope (+0.7M €/partido).", m:-10, o:0, s:0, i:0.7, p:"" },
-    { t:"STADIUM", title:"Mega-reforma final del estadio (+20.000 asientos) por 35M €", desc:"Convierte vuestro campo en una mina de oro (+2.0M €/partido).", m:-35, o:0, s:20000, i:2.0, p:"" },
-
-    // ECONOMÍA, PALANCAS Y CRISIS (76-100)
-    { t:"MONEY", title:"Activar Palanca: vender 15% derechos TV por 80M €", desc:"Recibís 80M € ahora, pero facturáis -0.8M € menos por partido.", m:80, o:0, s:0, i:-0.8, p:"" },
-    { t:"MONEY", title:"Firmar patrocinador principal de camiseta (+45M €)", desc:"Inyección directa de 45M € en la caja del club.", m:45, o:0, s:0, i:0.4, p:"" },
-    { t:"MONEY", title:"Gira amistosa por Estados Unidos y Japón (+30M €)", desc:"Ganáis 30M € rápidos, pero el equipo vuelve cansado (-1 GRL).", m:30, o:-1, s:0, i:0.2, p:"" },
-    { t:"MONEY", title:"Prima doble de 15M € a los jugadores para ganar el Clásico", desc:"Cuesta 15M €, pero salen extramotivados (+2 GRL).", m:-15, o:2, s:0, i:0, p:"" },
-    { t:"CRISIS", title:"🚨 Inspección de Hacienda: multa de 25M €", desc:"Hay que pagar sí o sí o negociar plazos.", m:-25, o:0, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Contrato multimillonario con marca deportiva (+55M €)", desc:"Récord histórico de camisetas (+0.6M €/partido).", m:55, o:0, s:0, i:0.6, p:"" },
-    { t:"MONEY", title:"Pedir crédito bancario urgente de 60M €", desc:"Salva la liquidez hoy, pero baja ingresos futuros (-0.7M €/partido).", m:60, o:0, s:0, i:-0.7, p:"" },
-    { t:"CRISIS", title:"🚨 Plaga de lesiones en el entrenamiento (-2 GRL)", desc:"Gastar 12M € en médicos top para recuperarlos o aguantar.", m:-12, o:-1, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Lanzar colección retro de camisetas (+22M €)", desc:"Éxito brutal de ventas entre los socios.", m:22, o:0, s:0, i:0.3, p:"" },
-    { t:"MONEY", title:"Acuerdo con plataforma de streaming para documental (+28M €)", desc:"Cámaras en el vestuario a cambio de 28M €.", m:28, o:0, s:0, i:0.2, p:"" },
-    { t:"MONEY", title:"Rebaja salarial del 20% negociada con capitanes", desc:"Ahorra dinero y mejora la facturación (+0.9M €/partido).", m:15, o:0, s:0, i:0.9, p:"" },
-    { t:"CRISIS", title:"🚨 Oferta de fondo inversor: 100M € a cambio de control", desc:"Dinero infinito hoy, pero reduce ingresos por partido (-1.1M €).", m:100, o:0, s:0, i:-1.1, p:"" },
-    { t:"MONEY", title:"Torneo relámpago de verano (+18M €)", desc:"Ingresos rápidos antes de la jornada.", m:18, o:0, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Contratar entrenador táctico de élite (14M €)", desc:"Sube el rendimiento colectivo del equipo (+2 GRL).", m:-14, o:2, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Vender participación de Merchandising por 50M €", desc:"Liquidez inmediata para fichar.", m:50, o:0, s:0, i:-0.5, p:"" },
-    { t:"CRISIS", title:"🚨 Sanción UEFA por Fair Play (-20M €)", desc:"Multa económica por exceso de gasto.", m:-20, o:0, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Patrocinador en la manga de la camiseta (+20M €)", desc:"Dinero limpio sin contrapartidas deportivas.", m:20, o:0, s:0, i:0.2, p:"" },
-    { t:"MONEY", title:"Subir 2 canteranos estrella al primer equipo (0 €)", desc:"Coste cero y suben +1 GRL por frescura.", m:0, o:1, s:0, i:0.1, p:"" },
-    { t:"MONEY", title:"Ampliación de capital entre socios (+35M €)", desc:"La afición rescata económicamente al club.", m:35, o:0, s:0, i:0.2, p:"" },
-    { t:"CRISIS", title:"🚨 Huelga de proveedores: pagar 10M € para desbloquear", desc:"Si no se paga, cae la recaudación del estadio.", m:-10, o:0, s:0, i:0.2, p:"" },
-    { t:"MONEY", title:"Acuerdo global de cripto / fintech (+32M €)", desc:"Patrocinio digital de alto riesgo y alto pago.", m:32, o:0, s:0, i:0.3, p:"" },
-    { t:"MONEY", title:"Concentración intensiva en los Pirineos (8M €)", desc:"Prepara físicamente al equipo para el Clásico (+1 GRL).", m:-8, o:1, s:0, i:0, p:"" },
-    { t:"MONEY", title:"Vender derechos de imagen internacionales (+40M €)", desc:"40M € directos a caja.", m:40, o:0, s:0, i:-0.3, p:"" },
-    { t:"CRISIS", title:"🚨 Oferta hostil de rival por vuestro entrenador (15M €)", desc:"Si lo dejáis ir ganáis 15M €, pero baja el GRL (-1).", m:15, o:-1, s:0, i:0, p:"" },
-    { t:"MONEY", title:"All-In Final: hipotecar todo por 120M € para fichajes", desc:"La jugada más arriesgada del juego: +120M € hoy, -1.3M €/partido.", m:120, o:0, s:0, i:-1.3, p:"" }
+  const BASE_PRESETS = [
+    {
+      t:"DILEMMA", title:"¿Qué hacemos con el presupuesto inicial del club?",
+      desc:"Hay que definir el rumbo de la temporada antes de la Jornada 1.",
+      opts:[
+        { text:"Fichar a Kylian Mbappé (200M € · Endeudarse -100M)", m:-200, o:4, s:0, i:0.8, p:"DEL|Kylian Mbappé|26|91|200M €" },
+        { text:"Ampliar Estadio +25.000 asientos (45M €)", m:-45, o:0, s:25000, i:2.4, p:"" },
+        { text:"Guardar los 100M € y subir canteranos (+1 GRL)", m:0, o:1, s:0, i:0.2, p:"" }
+      ]
+    },
+    {
+      t:"DILEMMA", title:"Plan de Ataque para el Mercado Galáctico",
+      desc:"Solo podemos cerrar una gran estrella esta semana.",
+      opts:[
+        { text:"Erling Haaland (190M € · Goleador total)", m:-190, o:4, s:0, i:0.7, p:"DEL|Erling Haaland|24|91|190M €" },
+        { text:"Nico Williams (58M € · Rápido y equilibrado)", m:-58, o:2, s:0, i:0.2, p:"DEL|Nico Williams|22|85|58M €" },
+        { text:"Florian Wirtz (130M € · Magia en el medio)", m:-130, o:3, s:0, i:0.4, p:"MED|Florian Wirtz|22|89|130M €" }
+      ]
+    },
+    {
+      t:"CRISIS", title:"🚨 Hacienda reclama 30M € de impuestos atrasados",
+      desc:"Si no pagamos hoy, nos bloquean los fichajes.",
+      opts:[
+        { text:"Pagar los 30M € al contado de la caja", m:-30, o:0, s:0, i:0, p:"" },
+        { text:"Vender un titular al PSG para pagar (+65M €)", m:65, o:-2, s:0, i:-0.1, p:"" },
+        { text:"Activar palanca de TV (+50M € hoy, -0.7M €/partido)", m:50, o:0, s:0, i:-0.7, p:"" }
+      ]
+    },
+    {
+      t:"STADIUM", title:"Reforma del Estadio y Precios de Entradas",
+      desc:"La directiva pide decidir cómo explotar el estadio en los partidos.",
+      opts:[
+        { text:"Construir Palcos VIP de lujo (15M € -> +1.5M €/partido)", m:-15, o:0, s:2000, i:1.5, p:"" },
+        { text:"Subir abonos un 30% (0 € -> +1.2M €/partido, -1 GRL moral)", m:0, o:-1, s:0, i:1.2, p:"" },
+        { text:"Entradas baratas para llenar el campo (-0.5M €/partido, +1 GRL)", m:0, o:1, s:0, i:-0.5, p:"" }
+      ]
+    },
+    {
+      t:"SELL", title:"Oferta millonaria desde Arabia Saudí",
+      desc:"Vienen con cheques en blanco a por jugadores de nuestra plantilla.",
+      opts:[
+        { text:"Vender estrella por 130M € (-3 GRL)", m:130, o:-3, s:0, i:-0.3, p:"" },
+        { text:"Vender suplente por 40M € (-1 GRL)", m:40, o:-1, s:0, i:0, p:"" },
+        { text:"Rechazar todo y dar prima de fidelidad (-10M €, +1 GRL)", m:-10, o:1, s:0, i:0, p:"" }
+      ]
+    }
   ];
+
+  // Generador automático hasta completar 100 escenarios variados
+  const EXTRA_SCENARIOS = [
+    ["Fichar a Jamal Musiala (135M €)", -135, 3, 0, 0.4, "MED|Jamal Musiala|22|88|135M €"],
+    ["Fichar a Rodri Hernández (120M €)", -120, 4, 0, 0.3, "MED|Rodri|28|91|120M €"],
+    ["Fichar a William Saliba (85M €)", -85, 3, 0, 0.1, "DEF|William Saliba|24|87|85M €"],
+    ["Fichar a Alphonso Davies libre (Prima 25M €)", -25, 2, 0, 0.2, "DEF|Alphonso Davies|24|84|50M €"],
+    ["Fichar a Alexander-Arnold (Prima 30M €)", -30, 2, 0, 0.2, "DEF|Alexander-Arnold|26|86|70M €"],
+    ["Fichar a Julián Álvarez (90M €)", -90, 2, 0, 0.3, "DEL|Julián Álvarez|25|86|90M €"],
+    ["Fichar a Rafael Leão (85M €)", -85, 2, 0, 0.2, "DEL|Rafael Leão|25|86|85M €"],
+    ["Fichar a Cole Palmer (110M €)", -110, 3, 0, 0.3, "MED|Cole Palmer|22|86|110M €"],
+    ["Fichar a Bukayo Saka (130M €)", -130, 3, 0, 0.4, "DEL|Bukayo Saka|23|88|130M €"],
+    ["Fichar a Lautaro Martínez (100M €)", -100, 3, 0, 0.3, "DEL|Lautaro Martínez|27|88|100M €"],
+    ["Fichar a G. Donnarumma (50M €)", -50, 2, 0, 0.1, "POR|Donnarumma|26|88|50M €"],
+    ["Fichar a Kvaratskhelia (80M €)", -80, 2, 0, 0.2, "DEL|Kvaratskhelia|24|86|80M €"],
+    ["Fichar a Viktor Gyökeres (75M €)", -75, 2, 0, 0.2, "DEL|Gyökeres|26|85|75M €"],
+    ["Fichar a Joško Gvardiol (80M €)", -80, 2, 0, 0.1, "DEF|Gvardiol|23|85|80M €"],
+    ["Fichar a Martin Ødegaard (105M €)", -105, 3, 0, 0.2, "MED|Ødegaard|26|88|105M €"],
+    ["Ampliar Grada Norte +12.000 asientos (18M €)", -18, 0, 12000, 1.1, ""],
+    ["Poner Techo Retráctil VIP (35M €)", -35, 1, 5000, 2.0, ""],
+    ["Vender Naming del Estadio por 70M €", 70, 0, 0, -0.3, ""],
+    ["Activar Palanca Merchandising (+55M €)", 55, 0, 0, -0.5, ""],
+    ["Patrocinador Principal Camiseta (+45M €)", 45, 0, 0, 0.4, ""],
+    ["Gira Mundial Verano (+30M €, -1 GRL)", 30, -1, 0, 0.2, ""],
+    ["Prima Doble Clásico (-15M €, +2 GRL)", -15, 2, 0, 0, ""],
+    ["Modernizar Ciudad Deportiva (-20M €, +2 GRL)", -20, 2, 0, 0.2, ""],
+    ["Operación Salida: vender 3 suplentes (+50M €)", 50, -1, 0, 0.1, ""],
+    ["Liquidación de emergencia (+110M €, -3 GRL)", 110, -3, 0, -0.2, ""]
+  ];
+
+  const ALL_100_PRESETS = [...BASE_PRESETS];
+  let idxGen = 0;
+  while (ALL_100_PRESETS.length < 100) {
+    const a = EXTRA_SCENARIOS[idxGen % EXTRA_SCENARIOS.length];
+    const b = EXTRA_SCENARIOS[(idxGen + 7) % EXTRA_SCENARIOS.length];
+    ALL_100_PRESETS.push({
+      t: a[1] < -40 ? "BUY" : (a[1] > 35 ? "SELL" : "DILEMMA"),
+      title: `Dilema #${ALL_100_PRESETS.length + 1}: ${a[0].split("(")[0].trim()} vs ${b[0].split("(")[0].trim()}`,
+      desc: "Elige una de las dos estrategias para el futuro inmediato del club.",
+      opts: [
+        { text: a[0], m: a[1], o: a[2], s: a[3], i: a[4], p: a[5] },
+        { text: b[0], m: b[1], o: b[2], s: b[3], i: b[4], p: b[5] },
+        { text: "No hacer nada y ahorrar recursos (0 €)", m: 0, o: 0, s: 0, i: 0, p: "" }
+      ]
+    });
+    idxGen++;
+  }
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -840,7 +872,7 @@
     if (isAdmin) {
       document.getElementById("godModeBtn").classList.remove("hidden");
       document.getElementById("infiltrateBar").classList.remove("hidden");
-      populatePresetsDropdown(PROPOSAL_PRESETS);
+      populatePresetsDropdown(ALL_100_PRESETS);
     }
 
     onSnapshot(doc(db, "users", user.uid), (snap) => {
@@ -869,7 +901,7 @@
     userProfile = {
       uid: currentUser.uid, email: currentUser.email, nickname: nick,
       club, banned: false, xp: 100, streak: 1, lastClaim: "",
-      votes: {}, propVotes: {}, joinedAt: Date.now()
+      votes: {}, joinedAt: Date.now()
     };
     await setDoc(doc(db, "users", currentUser.uid), userProfile);
     viewingClub = club;
@@ -892,8 +924,7 @@
   function getLevelInfo(xp = 100) {
     const lvl = Math.floor(xp / 150) + 1;
     const ranks = ["Canterano", "Socio", "Peñista", "Ultras", "Directivo", "Capitán", "Ídolo", "Leyenda"];
-    const rank = ranks[Math.min(ranks.length - 1, lvl - 1)];
-    return { lvl, rank };
+    return { lvl, rank: ranks[Math.min(ranks.length - 1, lvl - 1)] };
   }
 
   function updateUserXPUI() {
@@ -908,18 +939,15 @@
     btn.disabled = claimed;
     btn.style.opacity = claimed ? "0.5" : "1";
     document.getElementById("streakText").textContent = claimed
-      ? `¡Vuelve mañana! Racha actual: ${userProfile.streak || 1} días seguidos.`
+      ? `¡Vuelve mañana! Racha: ${userProfile.streak || 1} días seguidos.`
       : `Racha: ${userProfile.streak || 1}d · Reclama +100 XP y +0.5M € para tu club`;
   }
 
   window.claimDailyReward = async () => {
     const todayStr = new Date().toISOString().slice(0, 10);
     if (userProfile.lastClaim === todayStr) return;
-    const newStreak = (userProfile.streak || 0) + 1;
     await updateDoc(doc(db, "users", currentUser.uid), {
-      xp: increment(100),
-      streak: newStreak,
-      lastClaim: todayStr
+      xp: increment(100), streak: increment(1), lastClaim: todayStr
     });
     const budgetField = userProfile.club === "FCB" ? "fcbBudget" : "rmaBudget";
     await setDoc(doc(db, "system", "state"), { [budgetField]: increment(0.5) }, { merge: true });
@@ -1032,7 +1060,7 @@
     const bAlert = document.getElementById("bankruptcyBox");
     if (budget < 0) {
       bAlert.classList.remove("hidden");
-      document.getElementById("bankruptcyText").textContent = `Deuda actual: ${budget.toFixed(1)}M € · Lleváis ${debtDays} / 10 días en bancarrota. Si pasáis 10 días en negativo, ¡vuestro club pierde el experimento!`;
+      document.getElementById("bankruptcyText").textContent = `Deuda: ${budget.toFixed(1)}M € · Lleváis ${debtDays} / 10 días en bancarrota. ¡Vended jugadores o generad ingresos antes del día 10 o perderéis!`;
     } else {
       bAlert.classList.add("hidden");
     }
@@ -1055,23 +1083,30 @@
     const extra = viewingClub === "FCB" ? (gameState.fcbExtraPlayers || []) : (gameState.rmaExtraPlayers || []);
     const fullSquad = [...BASE_SQUADS[viewingClub], ...extra];
     document.getElementById("squadTitle").textContent = viewingClub === "FCB" ? "📋 Plantilla FC Barcelona" : "📋 Plantilla Real Madrid";
-    document.getElementById("squadBody").innerHTML = fullSquad.map(p => `
-      <tr>
-        <td><strong>${p.pos}</strong></td>
-        <td>${escapeHtml(p.name)}</td>
-        <td>${p.age}</td>
-        <td style="color:#60a5fa;font-weight:900;">${p.ovr}</td>
-        <td style="color:#4ade80;font-weight:700;">${p.val}</td>
-      </tr>
+    document.getElementById("squadCardsList").innerHTML = fullSquad.map(p => `
+      <div class="player-card">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="ovr-badge ${p.ovr >= 85 ? 'ovr-elite' : 'ovr-gold'}">
+            <span>${p.ovr}</span>
+            <span style="font-size:0.55rem;opacity:0.85;">${p.pos}</span>
+          </div>
+          <div>
+            <strong>${escapeHtml(p.name)}</strong>
+            <div style="font-size:0.74rem;color:var(--muted);">${p.age} años · Titular</div>
+          </div>
+        </div>
+        <div style="font-weight:900;color:#4ade80;font-size:0.85rem;">${p.val}</div>
+      </div>
     `).join("");
   }
 
+  // RENDER DE DECISIONES MULTI-OPCIÓN (A vs B vs C)
   function renderProposals() {
     const cont = document.getElementById("proposalsList");
     let unvoted = 0;
     allProposals.forEach(p => {
       const vMap = viewingClub === "FCB" ? (p.fcbVotes || {}) : (p.rmaVotes || {});
-      if (!p.executed && !vMap[currentUser.uid]) unvoted++;
+      if (!p.executed && vMap[currentUser.uid] === undefined) unvoted++;
     });
 
     document.getElementById("unvotedCount").textContent = unvoted;
@@ -1080,71 +1115,74 @@
     badge.classList.toggle("hidden", unvoted === 0);
 
     if (!allProposals.length) {
-      cont.innerHTML = "<p>No hay propuestas abiertas ahora mismo. ¡Atento al Vestuario!</p>";
+      cont.innerHTML = "<p>No hay decisiones abiertas ahora mismo.</p>";
       return;
     }
 
     const tags = {
+      DILEMMA: ['tag-dilemma', '🔀 Dilema'],
       BUY: ['tag-buy', '🟢 Fichaje'],
       SELL: ['tag-sell', '🔴 Venta'],
       STADIUM: ['tag-stadium', '🏟️ Estadio'],
-      MONEY: ['tag-money', '💰 Economía'],
       CRISIS: ['tag-crisis', '🚨 Crisis']
     };
 
     cont.innerHTML = allProposals.map(p => {
       const votesMap = viewingClub === "FCB" ? (p.fcbVotes || {}) : (p.rmaVotes || {});
-      let yes = 0, no = 0;
-      Object.values(votesMap).forEach(v => v === "yes" ? yes++ : no++);
-      const total = yes + no;
-      const yesPct = total ? Math.round((yes / total) * 100) : 50;
-      const myVote = votesMap[currentUser.uid];
-      const [cls, lbl] = tags[p.type] || ['tag-money', 'Decisión'];
+      const myChoice = votesMap[currentUser.uid];
+      const opts = p.options || [];
+      const counts = opts.map((_, i) => Object.values(votesMap).filter(v => v === i).length);
+      const totalVotes = counts.reduce((a, b) => a + b, 0);
+      const [cls, lbl] = tags[p.type] || ['tag-dilemma', 'Decisión'];
 
       return `
-        <div class="prop-card ${!p.executed && !myVote ? 'unvoted' : ''}">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <div class="prop-card ${!p.executed && myChoice === undefined ? 'unvoted' : ''}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
             <span class="tag ${cls}">${lbl}</span>
-            ${p.executed ? '<span class="tag tag-done">✅ EJECUTADA</span>' : (!myVote ? '<span style="font-size:0.68rem;color:var(--gold);font-weight:900;">● PENDIENTE DE TU VOTO</span>' : '<span style="font-size:0.68rem;color:var(--green);font-weight:800;">✓ VOTADA</span>')}
+            ${p.executed ? '<span class="tag tag-done">✅ EJECUTADA</span>' : `<span style="font-size:0.7rem;color:var(--gold);font-weight:800;">🗳️ ${totalVotes} votos</span>`}
           </div>
-          <strong style="font-size:0.96rem;display:block;margin-bottom:4px;">${escapeHtml(p.title)}</strong>
-          <p style="font-size:0.8rem;">${escapeHtml(p.desc)}</p>
-          <div class="impact-chips">
-            ${p.money ? `<span class="chip" style="color:${p.money > 0 ? '#4ade80' : '#f87171'};">${p.money > 0 ? '+' : ''}${p.money}M €</span>` : ''}
-            ${p.ovr ? `<span class="chip" style="color:#60a5fa;">GRL ${p.ovr > 0 ? '+' : ''}${p.ovr}</span>` : ''}
-            ${p.seats ? `<span class="chip" style="color:#fbbf24;">+${p.seats} asientos</span>` : ''}
-            ${p.income ? `<span class="chip" style="color:#34d399;">${p.income > 0 ? '+' : ''}${p.income}M €/partido</span>` : ''}
-          </div>
-          <div class="vote-bar">
-            <div class="v-yes" style="width:${yesPct}%;"></div>
-            <div class="v-no" style="width:${100 - yesPct}%;"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:0.74rem;font-weight:800;margin-bottom:8px;">
-            <span style="color:var(--green);">✅ SÍ: ${yes} (${yesPct}%)</span>
-            <span style="color:var(--red);">❌ NO: ${no} (${100 - yesPct}%)</span>
-          </div>
-          ${!p.executed ? `
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-              <button class="btn btn-sm ${myVote === 'yes' ? 'btn-green' : 'btn-outline'}" onclick="castPropVote('${p.id}', 'yes')">✅ Votar SÍ</button>
-              <button class="btn btn-sm ${myVote === 'no' ? 'btn-red' : 'btn-outline'}" onclick="castPropVote('${p.id}', 'no')">❌ Votar NO</button>
-            </div>
-          ` : ''}
+          <strong style="font-size:0.98rem;display:block;margin-bottom:4px;">${escapeHtml(p.title)}</strong>
+          <p style="font-size:0.8rem;margin-bottom:6px;">${escapeHtml(p.desc)}</p>
+
+          ${opts.map((opt, idx) => {
+            const c = counts[idx] || 0;
+            const pct = totalVotes ? Math.round((c / totalVotes) * 100) : 0;
+            const isSelected = myChoice === idx;
+            return `
+              <div class="opt-box ${isSelected ? 'selected' : ''}" onclick="${!p.executed ? `castMultiVote('${p.id}', ${idx})` : ''}">
+                <div class="opt-fill" style="width:${pct}%;"></div>
+                <div class="opt-content">
+                  <div class="opt-top">
+                    <span>${isSelected ? '✅ ' : ''}${escapeHtml(opt.text)}</span>
+                    <span style="color:var(--gold);margin-left:8px;">${pct}% (${c})</span>
+                  </div>
+                  <div class="opt-chips">
+                    ${opt.m ? `<span class="chip" style="color:${opt.m > 0 ? '#4ade80' : '#f87171'};">${opt.m > 0 ? '+' : ''}${opt.m}M €</span>` : ''}
+                    ${opt.o ? `<span class="chip" style="color:#60a5fa;">GRL ${opt.o > 0 ? '+' : ''}${opt.o}</span>` : ''}
+                    ${opt.s ? `<span class="chip" style="color:#fbbf24;">+${opt.s} asientos</span>` : ''}
+                    ${opt.i ? `<span class="chip" style="color:#34d399;">${opt.i > 0 ? '+' : ''}${opt.i}M €/part</span>` : ''}
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join("")}
         </div>
       `;
     }).join("");
   }
 
-  window.castPropVote = async (propId, choice) => {
+  window.castMultiVote = async (propId, optIndex) => {
     const p = allProposals.find(x => x.id === propId);
     const votesMap = viewingClub === "FCB" ? (p?.fcbVotes || {}) : (p?.rmaVotes || {});
-    const firstTime = !votesMap[currentUser.uid];
+    const firstTime = votesMap[currentUser.uid] === undefined;
     const field = viewingClub === "FCB" ? `fcbVotes.${currentUser.uid}` : `rmaVotes.${currentUser.uid}`;
-    await updateDoc(doc(db, "proposals", propId), { [field]: choice });
+    await updateDoc(doc(db, "proposals", propId), { [field]: optIndex });
     if (firstTime) {
-      await updateDoc(doc(db, "users", currentUser.uid), { xp: increment(25) });
+      await updateDoc(doc(db, "users", currentUser.uid), { xp: increment(30) });
     }
   };
 
+  // CANDIDATURAS COMPLETAS Y LEGIBLES
   function renderCandidates() {
     document.getElementById("rolesBoard").innerHTML = ROLES.map(role => {
       const top = allCandidates.find(c => c.role === role);
@@ -1158,41 +1196,58 @@
       `;
     }).join("");
 
+    const filter = document.getElementById("filterRoleCand").value;
+    const filtered = filter === "ALL" ? allCandidates : allCandidates.filter(c => c.role === filter);
     const cont = document.getElementById("candidatesContainer");
-    cont.innerHTML = allCandidates.length ? allCandidates.map(c => {
+
+    cont.innerHTML = filtered.length ? filtered.map(c => {
       const voted = userProfile.votes && userProfile.votes[c.role] === c.id;
       return `
-        <div class="prop-card">
+        <div class="cand-card">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
-            <strong>${escapeHtml(c.author)}</strong>
-            <span class="tag tag-money">${c.role}</span>
+            <strong style="font-size:0.96rem;">${escapeHtml(c.author)}</strong>
+            <span class="tag tag-stadium">${c.role}</span>
           </div>
-          <div style="color:var(--gold);font-style:italic;font-size:0.82rem;margin-bottom:4px;">"${escapeHtml(c.slogan)}"</div>
-          <p style="font-size:0.79rem;margin-bottom:8px;">${escapeHtml(c.program)}</p>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-weight:800;font-size:0.79rem;">🗳️ ${c.votes || 0} votos</span>
+          <div style="color:var(--gold);font-weight:800;font-size:0.85rem;margin-bottom:6px;">"${escapeHtml(c.slogan)}"</div>
+          <div class="cand-manifesto">
+            <div><strong style="color:#4ade80;">💰 Plan Económico:</strong> ${escapeHtml(c.planMoney || c.program || "Sin detallar")}</div>
+            <div><strong style="color:#60a5fa;">⚽ Plan Deportivo:</strong> ${escapeHtml(c.planSport || "Apostar por ganar todo")}</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-weight:800;font-size:0.82rem;">🗳️ ${c.votes || 0} votos</span>
+              <button class="react-btn" onclick="likeCand('${c.id}')">🔥 ${c.likes || 0}</button>
+            </div>
             <button class="btn btn-sm ${voted ? 'btn-green' : 'btn-outline'}" onclick="voteFor('${c.id}', '${c.role}')">
-              ${voted ? '✅ Votado' : 'Votar'}
+              ${voted ? '✅ Votado' : 'Votar Candidato'}
             </button>
           </div>
         </div>
       `;
-    }).join("") : "<p>Nadie se ha presentado aún.</p>";
+    }).join("") : "<p>No hay candidatos en esta categoría aún. ¡Sé el primero!</p>";
   }
+
+  window.likeCand = async (id) => {
+    await updateDoc(doc(db, "candidates", id), { likes: increment(1) }).catch(() => {});
+  };
 
   window.createCandidate = async () => {
     const role = document.getElementById("roleSelect").value;
     const slogan = document.getElementById("sloganInput").value.trim();
-    const program = document.getElementById("programInput").value.trim();
-    if (!slogan || !program) return alert("Rellena eslogan y programa.");
-    if (allCandidates.find(c => c.uid === currentUser.uid)) return alert("Ya tienes una candidatura.");
+    const planMoney = document.getElementById("planMoneyInput").value.trim();
+    const planSport = document.getElementById("planSportInput").value.trim();
+    if (!slogan || !planMoney || !planSport) return alert("Completa tu eslogan, plan económico y plan deportivo.");
+    if (allCandidates.find(c => c.uid === currentUser.uid)) return alert("Ya tienes una candidatura publicada.");
 
     await addDoc(collection(db, "candidates"), {
       uid: currentUser.uid, club: viewingClub, role,
-      author: userProfile.nickname, slogan, program, votes: 1, ts: Date.now()
+      author: userProfile.nickname, slogan, planMoney, planSport,
+      votes: 1, likes: 1, ts: Date.now()
     });
     document.getElementById("sloganInput").value = "";
-    document.getElementById("programInput").value = "";
+    document.getElementById("planMoneyInput").value = "";
+    document.getElementById("planSportInput").value = "";
+    alert("🚀 ¡Manifiesto electoral publicado!");
   };
 
   window.voteFor = async (candId, role) => {
@@ -1201,9 +1256,10 @@
     if (prevId) await updateDoc(doc(db, "candidates", prevId), { votes: increment(-1) }).catch(() => {});
     await updateDoc(doc(db, "candidates", candId), { votes: increment(1) });
     userProfile.votes = { ...(userProfile.votes || {}), [role]: candId };
-    await updateDoc(doc(db, "users", currentUser.uid), { votes: userProfile.votes, xp: increment(15) });
+    await updateDoc(doc(db, "users", currentUser.uid), { votes: userProfile.votes, xp: increment(20) });
   };
 
+  // CHAT PRIVADO
   let lastMsg = 0;
   window.sendChat = async () => {
     const input = document.getElementById("msgInput");
@@ -1224,6 +1280,7 @@
     });
   };
 
+  // MERCADO
   function listenMarket() {
     onSnapshot(collection(db, "market"), (snap) => {
       const list = [];
@@ -1231,12 +1288,15 @@
       list.sort((a, b) => (b.ovr || 0) - (a.ovr || 0));
       const cont = document.getElementById("marketList");
       cont.innerHTML = list.length ? list.map(p => `
-        <div class="market-item">
+        <div class="player-card">
           <div style="display:flex;align-items:center;gap:10px;">
-            <div class="ovr-badge">${p.ovr}</div>
+            <div class="ovr-badge ovr-elite">
+              <span>${p.ovr}</span>
+              <span style="font-size:0.55rem;">${p.pos}</span>
+            </div>
             <div>
               <strong>${escapeHtml(p.name)}</strong>
-              <div style="font-size:0.74rem;color:var(--muted);">${p.pos} · ${p.age} años</div>
+              <div style="font-size:0.74rem;color:var(--muted);">${p.age} años · Transferible</div>
             </div>
           </div>
           <div style="text-align:right;">
@@ -1244,10 +1304,11 @@
             ${isAdmin ? `<button class="btn btn-sm btn-red" style="margin-top:3px;padding:2px 6px;font-size:0.65rem;" onclick="deleteMarketPlayer('${p.id}')">Quitar</button>` : ''}
           </div>
         </div>
-      `).join("") : "<p>Mercado vacío ahora mismo. El administrador publicará jugadores pronto.</p>";
+      `).join("") : "<p>Mercado vacío ahora mismo.</p>";
     });
   }
 
+  // USUARIOS
   function listenUsers() {
     onSnapshot(collection(db, "users"), (snap) => {
       allUsers = [];
@@ -1265,35 +1326,54 @@
   }
 
   // =========================================================================
-  // GOD MODE ADMIN (100 PRESETS, EJECUCIÓN, MERCADO Y BANEOS)
+  // GOD MODE ADMIN (100 PRESETS MULTI-OPCIÓN, EJECUCIÓN, MERCADO Y BANEOS)
   // =========================================================================
   function populatePresetsDropdown(list) {
     const sel = document.getElementById("presetSelect");
-    sel.innerHTML = `<option value="">-- Elige entre ${list.length} propuestas listas --</option>` +
-      list.map((item, idx) => {
-        const realIdx = PROPOSAL_PRESETS.indexOf(item);
-        return `<option value="${realIdx}">#${realIdx + 1} [${item.t}] ${item.title}</option>`;
+    sel.innerHTML = `<option value="">-- Elige entre ${list.length} escenarios listos --</option>` +
+      list.map((item) => {
+        const realIdx = ALL_100_PRESETS.indexOf(item);
+        return `<option value="${realIdx}">#${realIdx + 1} ${item.title}</option>`;
       }).join("");
   }
 
   window.filterPresets = () => {
     const q = document.getElementById("presetSearch").value.toLowerCase();
-    const filtered = PROPOSAL_PRESETS.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
+    const filtered = ALL_100_PRESETS.filter(p => p.title.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q));
     populatePresetsDropdown(filtered);
   };
 
   window.applyPreset = () => {
     const idx = document.getElementById("presetSelect").value;
     if (idx === "") return;
-    const p = PROPOSAL_PRESETS[Number(idx)];
+    const p = ALL_100_PRESETS[Number(idx)];
     document.getElementById("admPropType").value = p.t;
     document.getElementById("admPropTitle").value = p.title;
     document.getElementById("admPropDesc").value = p.desc;
-    document.getElementById("admPropMoney").value = p.m;
-    document.getElementById("admPropOvr").value = p.o;
-    document.getElementById("admPropSeats").value = p.s;
-    document.getElementById("admPropIncome").value = p.i;
-    document.getElementById("admPropPlayer").value = p.p;
+
+    const a = p.opts[0] || {};
+    document.getElementById("optAText").value = a.text || "";
+    document.getElementById("optAMoney").value = a.m || 0;
+    document.getElementById("optAOvr").value = a.o || 0;
+    document.getElementById("optASeats").value = a.s || 0;
+    document.getElementById("optAIncome").value = a.i || 0;
+    document.getElementById("optAPlayer").value = a.p || "";
+
+    const b = p.opts[1] || {};
+    document.getElementById("optBText").value = b.text || "";
+    document.getElementById("optBMoney").value = b.m || 0;
+    document.getElementById("optBOvr").value = b.o || 0;
+    document.getElementById("optBSeats").value = b.s || 0;
+    document.getElementById("optBIncome").value = b.i || 0;
+    document.getElementById("optBPlayer").value = b.p || "";
+
+    const c = p.opts[2] || {};
+    document.getElementById("optCText").value = c.text || "";
+    document.getElementById("optCMoney").value = c.m || 0;
+    document.getElementById("optCOvr").value = c.o || 0;
+    document.getElementById("optCSeats").value = c.s || 0;
+    document.getElementById("optCIncome").value = c.i || 0;
+    document.getElementById("optCPlayer").value = c.p || "";
   };
 
   window.openGodPanel = () => {
@@ -1341,74 +1421,103 @@
       rmaIncome: Number(document.getElementById("admRmaIncome").value),
       rmaPts: Number(document.getElementById("admRmaPts").value)
     }, { merge: true });
-    alert("✅ ¡Todo guardado y actualizado en vivo!");
+    alert("✅ ¡Guardado en tiempo real!");
   };
 
-  window.adminCreateProposal = async () => {
+  window.adminCreateMultiProposal = async () => {
     if (!isAdmin) return;
     const club = document.getElementById("admPropClub").value;
     const type = document.getElementById("admPropType").value;
     const title = document.getElementById("admPropTitle").value.trim();
     const desc = document.getElementById("admPropDesc").value.trim();
-    const money = Number(document.getElementById("admPropMoney").value) || 0;
-    const ovr = Number(document.getElementById("admPropOvr").value) || 0;
-    const seats = Number(document.getElementById("admPropSeats").value) || 0;
-    const income = Number(document.getElementById("admPropIncome").value) || 0;
-    const playerRaw = document.getElementById("admPropPlayer").value.trim();
 
-    if (!title) return alert("Elige o escribe un título.");
+    const options = [];
+    const textA = document.getElementById("optAText").value.trim();
+    const textB = document.getElementById("optBText").value.trim();
+    const textC = document.getElementById("optCText").value.trim();
+
+    if (!title || !textA || !textB) return alert("Rellena el título y al menos Opción A y Opción B.");
+
+    options.push({
+      text: textA,
+      m: Number(document.getElementById("optAMoney").value) || 0,
+      o: Number(document.getElementById("optAOvr").value) || 0,
+      s: Number(document.getElementById("optASeats").value) || 0,
+      i: Number(document.getElementById("optAIncome").value) || 0,
+      p: document.getElementById("optAPlayer").value.trim()
+    });
+    options.push({
+      text: textB,
+      m: Number(document.getElementById("optBMoney").value) || 0,
+      o: Number(document.getElementById("optBOvr").value) || 0,
+      s: Number(document.getElementById("optBSeats").value) || 0,
+      i: Number(document.getElementById("optBIncome").value) || 0,
+      p: document.getElementById("optBPlayer").value.trim()
+    });
+    if (textC) {
+      options.push({
+        text: textC,
+        m: Number(document.getElementById("optCMoney").value) || 0,
+        o: Number(document.getElementById("optCOvr").value) || 0,
+        s: Number(document.getElementById("optCSeats").value) || 0,
+        i: Number(document.getElementById("optCIncome").value) || 0,
+        p: document.getElementById("optCPlayer").value.trim()
+      });
+    }
+
     await addDoc(collection(db, "proposals"), {
-      club, type, title, desc, money, ovr, seats, income, playerRaw,
+      club, type, title, desc, options,
       fcbVotes: {}, rmaVotes: {}, executed: false, ts: Date.now()
     });
-    document.getElementById("admPropTitle").value = "";
-    document.getElementById("admPropDesc").value = "";
-    document.getElementById("admPropPlayer").value = "";
-    alert("🚀 Propuesta lanzada a votación.");
+    alert("🚀 ¡Votación multi-opción lanzada!");
   };
 
   function renderAdminProposals() {
-    document.getElementById("admPropsList").innerHTML = allProposals.map(p => `
-      <div class="prop-card" style="padding:10px;">
-        <strong>[${p.club}] ${escapeHtml(p.title)}</strong>
-        <div style="font-size:0.73rem;color:var(--muted);margin:3px 0;">
-          Caja: ${p.money}M€ · GRL: ${p.ovr} · Asientos: ${p.seats} · €/Part: ${p.income}M
+    document.getElementById("admPropsList").innerHTML = allProposals.map(p => {
+      const opts = p.options || [];
+      return `
+        <div class="prop-card" style="padding:10px;">
+          <strong>[${p.club}] ${escapeHtml(p.title)}</strong>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;">
+            ${!p.executed ? opts.map((o, idx) => `
+              <button class="btn btn-sm btn-green" onclick="executeOption('${p.id}', ${idx})">⚡ Aplicar Op.${idx + 1} (${viewingClub})</button>
+            `).join("") : '<span class="tag tag-done">Ejecutada</span>'}
+            <button class="btn btn-sm btn-red" onclick="deleteProposal('${p.id}')">🗑️</button>
+          </div>
         </div>
-        <div style="display:flex;gap:6px;margin-top:6px;">
-          ${!p.executed ? `<button class="btn btn-sm btn-green" onclick="executeProposal('${p.id}')">⚡ Ejecutar en ${viewingClub}</button>` : '<span class="tag tag-done">Ejecutada</span>'}
-          <button class="btn btn-sm btn-red" onclick="deleteProposal('${p.id}')">🗑️</button>
-        </div>
-      </div>
-    `).join("");
+      `;
+    }).join("");
   }
 
-  window.executeProposal = async (propId) => {
+  window.executeOption = async (propId, optIdx) => {
     if (!isAdmin) return;
     const p = allProposals.find(x => x.id === propId);
-    if (!p) return;
+    if (!p || !p.options[optIdx]) return;
+    const opt = p.options[optIdx];
     const isFcb = viewingClub === "FCB";
     const updates = {};
+
     if (isFcb) {
-      updates.fcbBudget = Number(gameState.fcbBudget) + (p.money || 0);
-      updates.fcbOvr = Number(gameState.fcbOvr) + (p.ovr || 0);
-      updates.fcbSeats = Number(gameState.fcbSeats) + (p.seats || 0);
-      updates.fcbIncome = Number(gameState.fcbIncome) + (p.income || 0);
+      updates.fcbBudget = Number(gameState.fcbBudget) + (opt.m || 0);
+      updates.fcbOvr = Number(gameState.fcbOvr) + (opt.o || 0);
+      updates.fcbSeats = Number(gameState.fcbSeats) + (opt.s || 0);
+      updates.fcbIncome = Number(gameState.fcbIncome) + (opt.i || 0);
     } else {
-      updates.rmaBudget = Number(gameState.rmaBudget) + (p.money || 0);
-      updates.rmaOvr = Number(gameState.rmaOvr) + (p.ovr || 0);
-      updates.rmaSeats = Number(gameState.rmaSeats) + (p.seats || 0);
-      updates.rmaIncome = Number(gameState.rmaIncome) + (p.income || 0);
+      updates.rmaBudget = Number(gameState.rmaBudget) + (opt.m || 0);
+      updates.rmaOvr = Number(gameState.rmaOvr) + (opt.o || 0);
+      updates.rmaSeats = Number(gameState.rmaSeats) + (opt.s || 0);
+      updates.rmaIncome = Number(gameState.rmaIncome) + (opt.i || 0);
     }
 
-    if (p.playerRaw && p.playerRaw.includes("|")) {
-      const [pos, name, age, ovr, val] = p.playerRaw.split("|");
+    if (opt.p && opt.p.includes("|")) {
+      const [pos, name, age, ovr, val] = opt.p.split("|");
       const newPlayer = { pos: pos.trim(), name: name.trim(), age: Number(age), ovr: Number(ovr), val: val.trim() };
       updates[isFcb ? "fcbExtraPlayers" : "rmaExtraPlayers"] = arrayUnion(newPlayer);
     }
 
     await setDoc(doc(db, "system", "state"), updates, { merge: true });
     await updateDoc(doc(db, "proposals", propId), { executed: true });
-    alert(`⚡ ¡Propuesta ejecutada en ${viewingClub}!`);
+    alert(`⚡ ¡Opción "${opt.text}" aplicada en ${viewingClub}!`);
   };
 
   window.deleteProposal = async (id) => {
@@ -1423,7 +1532,7 @@
     const age = Number(document.getElementById("mktAge").value) || 23;
     const ovr = Number(document.getElementById("mktOvr").value) || 85;
     const price = Number(document.getElementById("mktPrice").value) || 50;
-    if (!name) return alert("Pon el nombre del jugador.");
+    if (!name) return alert("Pon el nombre.");
     await addDoc(collection(db, "market"), { pos, name, age, ovr, price });
     document.getElementById("mktName").value = "";
     alert("⚽ Jugador añadido.");
@@ -1433,7 +1542,7 @@
     if (!isAdmin) return;
     try {
       const arr = JSON.parse(document.getElementById("mktJsonInput").value.trim());
-      if (!Array.isArray(arr)) return alert("Debe ser un array JSON [ ... ]");
+      if (!Array.isArray(arr)) return alert("Debe ser una lista JSON [ ... ]");
       for (const p of arr) {
         await addDoc(collection(db, "market"), {
           pos: p.pos || "DEL", name: p.name || "Jugador",
